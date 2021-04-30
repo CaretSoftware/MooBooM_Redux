@@ -114,7 +114,21 @@ public class GameController : MonoBehaviour
         //If a mine didn't explode and cow hasn't taken damage and exploded bombs are less than 3
         if (!mineExploded && !cowTakenDamage && explodedBombs < GOAL_NOT_REACHED)
         {
-            numberOfStars = numberOfStars - explodedBombs;
+            //If the is only 1 bomb in game
+            if (startingNumberOfBombs == 1 && explodedBombs == 1)
+            {
+                numberOfStars = 0;
+            }
+            //If there is only 2 bombs in game
+            else if (startingNumberOfBombs == 2 && explodedBombs == 2) {
+                numberOfStars = 0;
+            }
+            else
+            {
+                numberOfStars = numberOfStars - explodedBombs;
+            }
+            
+            
         }
         else
         {
