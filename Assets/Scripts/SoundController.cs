@@ -46,6 +46,10 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        if (!isNotLevel)
+        {
+            PlaySoundWithDelay("BombThrow", 2f);
+        }
     }
 
     private void Update()
@@ -54,13 +58,12 @@ public class SoundController : MonoBehaviour
         {
             if (LocalisationSystem.language == LocalisationSystem.Language.Swedish)
             {
-                PlaySoundWithDelay("SwedishFarmer", 1.5f);
+                PlaySoundWithDelay("SwedishFarmer", 1f);
             }
             else if (LocalisationSystem.language == LocalisationSystem.Language.English)
             {
-                PlaySoundWithDelay("EnglishFarmer", 1.5f);
+                PlaySoundWithDelay("EnglishFarmer", 1f);
             }
-            PlaySoundWithDelay("BombThrow", 2f);
             isInitialized = true;
         }
     }
