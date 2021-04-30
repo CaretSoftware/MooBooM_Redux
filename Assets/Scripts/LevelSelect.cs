@@ -18,7 +18,9 @@ public class LevelSelect : MonoBehaviour
     private void OnEnable()
     {
         DisableLockedLevels();
-        DisplayEarnedStarsOnButtons(SaveManager.getChapterNumber());
+
+        if(SaveManager.CheckIfFileExists())
+            DisplayEarnedStarsOnButtons(SaveManager.getChapterNumber());
     }
 
 

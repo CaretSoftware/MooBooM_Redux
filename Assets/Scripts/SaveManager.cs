@@ -6,8 +6,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveManager{
 
-        
-   
+    //No need to create and initialize this 3 times so it's a class variable
+    private static string path = Application.persistentDataPath + "/playerProgress.save";
+
     private static int[][] levelStarsofChapters;     //[chapter][levels]
     private static int[] levelStarsChap1 = new int[9];
     private static int[] levelStarsChap2 = new int[9];
@@ -23,7 +24,6 @@ public static class SaveManager{
 
         BinaryFormatter formatter = new BinaryFormatter();  //Creates a binary formatter
         //vvv -- A save path that is different on PC, Mac or i.e Android but end up in a file called "playerProgress.save"
-        string path = Application.persistentDataPath + "/playerProgress.save";
         FileStream fileStream = new FileStream(path, FileMode.Create); //A stream of data contained in a file
 
         if(fileStream.Length > 0)
@@ -91,31 +91,28 @@ public static class SaveManager{
     }
 
     public static int[][] LoadSaveProgress() {
-        string path = Application.persistentDataPath + "/playerProgress.save";
         FileStream fileStream = new FileStream(path, FileMode.Open);  //Open the existing data
-        if (!File.Exists(path)/* && fileStream.Length > 0*/)
-        {
-            Debug.LogError("Could not find saved data from " + path);   //error message
-            createANewSaveProgress();
-            return levelStarsofChapters;
-            
-        }
-        else
+        if (File.Exists(path) && fileStream.Length > 0)
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
             levelStarsofChapters = formatter.Deserialize(fileStream) as int[][]; //Reads the file ( -> from binary to original) casts it to int[][]
             fileStream.Close();
             return levelStarsofChapters;
-
-            /*
-            BinaryFormatter formatter = new BinaryFormatter();  //Creates a binary formatter
-                                                                //vvv -- A save path that is different on PC, Mac or i.e Android but end up in a file called "playerProgress.save"
-            path = Application.persistentDataPath + "/playerProgress.save";
-            FileStream createFileStream = new FileStream(path, FileMode.Create);
-            
-            fileStream.Close();*/
-
         }
+        else
+        {
+            Debug.LogError("Could not find saved data from " + path);   //error message
+
+            return null;
+        }
+    }
+
+    public static bool CheckIfFileExists() {
+        if (File.Exists(path))
+        {
+            return true;
+        }
+        return false;
     }
 }
