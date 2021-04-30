@@ -8,6 +8,7 @@ public class MusicController : MonoBehaviour
 
     [SerializeField] private AudioClip musicClip;
 
+    private bool musicIsPlaying;
 
     private void Awake()
     {
@@ -17,10 +18,14 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource.clip = musicClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        if (!musicIsPlaying)
+        {
+            audioSource.clip = musicClip;
+            audioSource.loop = true;
+            audioSource.Play();
+            musicIsPlaying = true;
+        }
     }
 
-  
+
 }
