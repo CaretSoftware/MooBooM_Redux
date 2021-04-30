@@ -42,12 +42,8 @@ public class UIManager : MonoBehaviour
         if (!gameController.isLevelWon())
         {
             DisablePlayNextButton();
-        }
-
-        /*if (gameController.isGameOver())
-        {
             DisplayLoosingCross();
-        }  */  
+        } 
 
     }
     
@@ -86,10 +82,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    /*private void DisplayLoosingCross()
+    private void DisplayLoosingCross()
     {
         endOfLevelCanvas.transform.GetChild(0).Find("LoosingCross").gameObject.SetActive(true);
-    }*/
+    }
 
     private void DisablePlayNextButton() {
             playNextButton.interactable = false;
