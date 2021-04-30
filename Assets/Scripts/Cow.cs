@@ -22,4 +22,8 @@ public class Cow : MonoBehaviour {
 		Debug.Log("Boom");
 		rb.AddExplosionForce(500f, otherPos, 20f, 1f);
 	}
+
+	public void UseGravity(bool gravity) {
+		rb.useGravity = gravity;
+	}
 }
