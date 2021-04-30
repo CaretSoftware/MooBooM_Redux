@@ -73,11 +73,11 @@ public static class SaveManager{
 
     public static bool isLevelUnlocked(int chapter, int currentLevel)
     {
-        /* //Loads the players progress if it hasn't already been loaded
+        //Loads the players progress if it hasn't already been loaded
         if (levelStarsofChapters == null)
         {
             levelStarsofChapters = LoadSaveProgress();
-        }*/
+        }
 
         //If the specified level have 1 or more stars, you can play the next level
         if (levelStarsofChapters != null)
