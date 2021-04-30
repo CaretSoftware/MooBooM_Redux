@@ -17,6 +17,11 @@ public class ChapterNode : MonoBehaviour {
 	private TransitionEffect transition;
 	private bool transitioned;
 
+	private static List<ChapterNode> chapterNodes = new List<ChapterNode>();
+
+	private void Awake() {
+		chapterNodes.Add(this);
+	}
 
 	private void Start() {
 		transition = FindObjectOfType<TransitionEffect>();
@@ -52,15 +57,15 @@ public class ChapterNode : MonoBehaviour {
 		if (distance < 1f) {
 			cowRB.AddForce(direction * attractionForce);
 			if (distance < .5f) {
-				cowRB.drag = 1f;
+				cowRB.drag = 3f;
 				timer += Time.fixedDeltaTime;
 			}
 			if (timer > timeUntilChapterSelect && !transitioned) {
 				cameFromNode = true;
 				transitioned = true;
-				cowRB.drag = 10f;
+				cowRB.drag = 3f;
+				cowRB.angularDrag = 2f;
 				cowRB.useGravity = false;
-				//Physics.gravity = Vector3.down * 20f;
 				transition.Transition();
 				SaveManager.SetChapterNumber(chapterNumber);
 			}
@@ -77,7 +82,14 @@ public class ChapterNode : MonoBehaviour {
 		return cameFromNode;
 	}
 
+	public static void ResetNodes() {
+		for (int i = 0; i < chapterNodes.Count; i++) {
+			chapterNodes[i].ResetNode();
+		}
+	}
+
 	private void ResetNode() {
 		transitioned = false;
+		cowRB.angularDrag = 0f;
 	}
 }
