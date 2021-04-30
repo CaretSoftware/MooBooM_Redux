@@ -12,6 +12,7 @@ public class VolumeControl : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] float multiplier = 30f;
     [SerializeField] Toggle toggle;
+
     private bool disableToggleEvent;
 
     private void Awake()

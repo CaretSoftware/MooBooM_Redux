@@ -1374,6 +1374,10 @@ PrefabInstance:
       value: SwedishFarmer
       objectReference: {fileID: 0}
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[10].name
+      value: VolumeFx
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: soundClips.Array.data[2].pitch
       value: 0.8
       objectReference: {fileID: 0}
@@ -1384,6 +1388,10 @@ PrefabInstance:
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: soundClips.Array.data[8].pitch
       value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[10].pitch
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: soundClips.Array.data[2].volume
@@ -1441,6 +1449,10 @@ PrefabInstance:
       propertyPath: soundClips.Array.data[9].audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 75c9277f822da184db8a07e64e766e97, type: 3}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[10].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ec6e4958d98a904eb0e282a173e8acb, type: 3}
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: soundClips.Array.data[2].audioMixerGroup
       value: 
