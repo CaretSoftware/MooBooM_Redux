@@ -29,7 +29,7 @@ public class TextLocaliserUI : MonoBehaviour {
     }
 
     private void OnEnable() {
-        if (!isAdded) {
+        if (languageSetter != null && !isAdded) {
             languageSetter.AddLanguageSetter(this);
         }
         isAdded = true;
