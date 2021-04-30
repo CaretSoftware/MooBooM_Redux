@@ -30,7 +30,6 @@ public class SoundController : MonoBehaviour
             return;
         }
 
-        //DontDestroyOnLoad(gameObject);
 
         for(int i = 0; i < soundClips.Length; i++)
         {
@@ -47,8 +46,7 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        PlaySound("Music");
-        PlaySoundWithDelay("BombThrow", 2f);
+        //PlaySound("Music");
     }
 
     private void Update()
@@ -63,7 +61,8 @@ public class SoundController : MonoBehaviour
             {
                 PlaySoundWithDelay("EnglishFarmer", 1.5f);
             }
-        isInitialized = true;
+            PlaySoundWithDelay("BombThrow", 2f);
+            isInitialized = true;
         }
     }
 
