@@ -8,7 +8,7 @@ public class ChapterNode : MonoBehaviour {
 	[SerializeField] private int chapterNumber = 1;
 	private Transform cow;
 	private Rigidbody cowRB;
-	[SerializeField][Range(1f, 50f)] private float atttractionForce = 30f;
+	[SerializeField][Range(1f, 50f)] private float attractionForce = 30f;
 	private float distance;
 	private Vector3 direction;
 	private float timer;
@@ -43,19 +43,24 @@ public class ChapterNode : MonoBehaviour {
 		direction = direction.normalized;
 
 		if (distance > 1f) {
+			if (cameFromNode) {
+				cowRB.drag = 1f;
+			}
 			cameFromNode = false;
 			timer = 0f;
-			cowRB.drag = 1f;
-		} else {
-			cowRB.AddForce(direction * atttractionForce);
+		}
+		if (distance < 1f) {
+			cowRB.AddForce(direction * attractionForce);
 			if (distance < .5f) {
 				cowRB.drag = 1f;
 				timer += Time.fixedDeltaTime;
 			}
 			if (timer > timeUntilChapterSelect && !transitioned) {
+				cameFromNode = true;
 				transitioned = true;
-				cowRB.drag = 3f;
+				cowRB.drag = 10f;
 				cowRB.useGravity = false;
+				//Physics.gravity = Vector3.down * 20f;
 				transition.Transition();
 				SaveManager.SetChapterNumber(chapterNumber);
 			}
@@ -65,9 +70,14 @@ public class ChapterNode : MonoBehaviour {
 	private bool CameFromNode() {
 		if (cameFromNode) {
 			if ((transform.position - cow.position).magnitude > 1f) {
+				//transitioned = false;
 				cameFromNode = false;
 			}
 		}
 		return cameFromNode;
+	}
+
+	private void ResetNode() {
+		transitioned = false;
 	}
 }
