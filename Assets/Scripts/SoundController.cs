@@ -46,7 +46,6 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        //PlaySound("Music");
     }
 
     private void Update()
