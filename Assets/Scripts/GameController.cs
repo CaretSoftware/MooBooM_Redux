@@ -123,12 +123,11 @@ public class GameController : MonoBehaviour
             else if (startingNumberOfBombs == 2 && explodedBombs == 2) {
                 numberOfStars = 0;
             }
-            //denna är tre eller mer
             else
             {
                 numberOfStars = numberOfStars - explodedBombs;
             }
-            //denna är tre eller mer
+            
             
         }
         else
