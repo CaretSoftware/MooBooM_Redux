@@ -60,7 +60,7 @@ public class LevelSelect : MonoBehaviour
     public void PlayNextLevel()
     {
         //If the player is on level 9 or 18 etc.. next level button will take the player to 
-        //the overwolrd (to select at new chapter)
+        //the overwolrd (to select a new chapter)
         if (getLevelNameAsInt() % 9 == 0)
             SceneManager.LoadScene("Overworld Level");
         else
