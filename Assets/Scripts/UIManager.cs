@@ -37,11 +37,14 @@ public class UIManager : MonoBehaviour
     {
         endOfLevelCanvas.SetActive(true);
         DisplayRightAmountOfStars();
+        
 
         if (!gameController.isLevelWon())
         {
             DisablePlayNextButton();
-        }
+            DisplayLoosingCross();
+        } 
+
     }
     
     public void openLevelSelect() {
@@ -77,6 +80,11 @@ public class UIManager : MonoBehaviour
                 endOfLevelCanvas.transform.GetChild(0).Find("Star" + i).gameObject.SetActive(true);
             }
         }
+    }
+
+    private void DisplayLoosingCross()
+    {
+        endOfLevelCanvas.transform.GetChild(0).Find("LoosingCross").gameObject.SetActive(true);
     }
 
     private void DisablePlayNextButton() {

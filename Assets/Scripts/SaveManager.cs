@@ -115,4 +115,26 @@ public static class SaveManager{
         }
         return false;
     }
+
+    public static bool IsNextChapterUnlocked(int previousChapter) {
+
+        int nextChapter = previousChapter + 1;
+        int starsToUnlockNewChapter = nextChapter * 5;
+        //Loads the players progress if it hasn't already been loaded
+        if (levelStarsofChapters == null)
+        {
+            levelStarsofChapters = LoadSaveProgress();
+        }
+
+        int earnedStars = 0;
+        for (int i = 0; i < levelStarsofChapters[previousChapter - 1].Length; i++)
+        {
+            earnedStars = earnedStars + levelStarsofChapters[previousChapter - 1][i];
+        }
+
+        if (earnedStars >= starsToUnlockNewChapter)
+            return true;
+        else
+            return false;
+    }
 }
