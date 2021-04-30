@@ -31,6 +31,8 @@ public class TextLocaliserUI : MonoBehaviour {
     private void OnEnable() {
         if (languageSetter != null && !isAdded) {
             languageSetter.AddLanguageSetter(this);
+
+            // Big change
         }
         isAdded = true;
     }
