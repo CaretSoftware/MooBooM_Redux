@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2814051227399366835}
   m_Layer: 0
-  m_Name: ChocolateMilkPivot
+  m_Name: MilkPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 2814051229235036888}
   - component: {fileID: 2814051229235036889}
   m_Layer: 0
-  m_Name: ChocolateMilkGlass
+  m_Name: MilkGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
