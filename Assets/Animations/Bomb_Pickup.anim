@@ -537,15 +537,15 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.4
-    functionName: PickupBomb
+  - time: 0.33333334
+    functionName: PickMeUpBeforeYouGoGo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.41666666
-    functionName: PickMeUpBeforeYouGoGo
+  - time: 0.4
+    functionName: PickupBomb
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
