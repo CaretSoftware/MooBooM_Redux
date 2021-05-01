@@ -37,7 +37,7 @@ public class Mine : MonoBehaviour, IExplosive
             isExploding = true;
             soundController.PlaySound("ExplosionFx");
             AnimateExplosion();
-            gameController.MineExploded();
+            
             HurtCow();
         }
     }
@@ -49,6 +49,9 @@ public class Mine : MonoBehaviour, IExplosive
         cow.Explosion(transform.position);
         soundController.PlaySound("HurtCow");
         gameController.CowTakesDamage();
+        gameController.MineExploded();
+        
+        
     }
 
     public void Exploded()

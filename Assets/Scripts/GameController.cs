@@ -86,6 +86,7 @@ public class GameController : MonoBehaviour
         bombList.Remove(bomb);
         if (!gameOver)
         {
+            Debug.Log("Bomb picked up");
             bombsPickedUp++;
             CheckIfLastBomb();
         }
@@ -94,6 +95,7 @@ public class GameController : MonoBehaviour
     private void CheckIfLastBomb() {
         if (bombList.Count == 0) 
         {
+            Debug.Log("Last bomb -> GameOver() is called");
             GameOver();
 		}
     }

@@ -113,8 +113,12 @@ public class Bomb : MonoBehaviour, IExplosive
         soundController.PlaySound("HurtCow");
         gameController.CowTakesDamage();
 
-        if(!gameController.isCowAlreadyHurt())
+        if (!gameController.isCowAlreadyHurt())
+        {
+            Debug.Log("GameOver() is called in Bomb scripts HurtCow()");
             gameController.GameOver();
+        }
+            
     }
 
     private void AnimateExplosion()
