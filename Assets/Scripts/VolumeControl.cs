@@ -50,6 +50,7 @@ public class VolumeControl : MonoBehaviour
         PlayerPrefs.SetFloat(volumeParameter, slider.value);
     }
 
+
     void Start()
     {
         slider.value = PlayerPrefs.GetFloat(volumeParameter, slider.value);

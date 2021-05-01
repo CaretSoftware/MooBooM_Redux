@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
@@ -30,9 +31,9 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            audioSource.clip = musicClip;
-            audioSource.loop = true;
-            audioSource.Play();
+        audioSource.clip = musicClip;
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
 
