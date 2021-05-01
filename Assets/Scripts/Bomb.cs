@@ -115,10 +115,8 @@ public class Bomb : MonoBehaviour, IExplosive
 
         if (!gameController.isCowAlreadyHurt())
         {
-            Debug.Log("GameOver() is called in Bomb scripts HurtCow()");
             gameController.GameOver();
-        }
-            
+        }   
     }
 
     private void AnimateExplosion()

@@ -86,7 +86,6 @@ public class GameController : MonoBehaviour
         bombList.Remove(bomb);
         if (!gameOver)
         {
-            Debug.Log("Bomb picked up");
             bombsPickedUp++;
             CheckIfLastBomb();
         }
@@ -95,7 +94,6 @@ public class GameController : MonoBehaviour
     private void CheckIfLastBomb() {
         if (bombList.Count == 0) 
         {
-            Debug.Log("Last bomb -> GameOver() is called");
             GameOver();
 		}
     }
@@ -106,14 +104,8 @@ public class GameController : MonoBehaviour
         {
             
             mineExploded = true;
-            Debug.Log("MineExploded = " + mineExploded);
-            Debug.Log("GameOver called in MineExploded()");
             gameOver = true;
             GameOver();
-            /*if (!mineExploded && !cowTakenDamage)
-            {
-                
-            }*/
         }
     }
 
@@ -122,7 +114,7 @@ public class GameController : MonoBehaviour
         //If a mine didn't explode and cow hasn't taken damage and exploded bombs are less than 3
         if (!mineExploded && !cowTakenDamage && explodedBombs < GOAL_NOT_REACHED)
         {
-            //If the is only 1 bomb in game
+            //If there is only 1 bomb in game
             if (startingNumberOfBombs == 1 && explodedBombs == 1)
             {
                 numberOfStars = 0;

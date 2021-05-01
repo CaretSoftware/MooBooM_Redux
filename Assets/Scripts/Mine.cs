@@ -50,8 +50,6 @@ public class Mine : MonoBehaviour, IExplosive
         soundController.PlaySound("HurtCow");
         gameController.CowTakesDamage();
         gameController.MineExploded();
-        
-        
     }
 
     public void Exploded()
