@@ -112,7 +112,9 @@ public class Bomb : MonoBehaviour, IExplosive
         cow.Explosion(transform.position);
         soundController.PlaySound("HurtCow");
         gameController.CowTakesDamage();
-        gameController.GameOver();
+
+        if(!gameController.isCowAlreadyHurt())
+            gameController.GameOver();
     }
 
     private void AnimateExplosion()

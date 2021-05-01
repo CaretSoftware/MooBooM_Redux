@@ -160,6 +160,9 @@ public class GameController : MonoBehaviour
     public void CowTakesDamage() {
         cowTakenDamage = true;
     }
+    public bool isCowAlreadyHurt() {
+        return cowTakenDamage;
+    }
 
     public int getExplodedBombsCount() {
         return explodedBombs;
