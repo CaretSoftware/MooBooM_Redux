@@ -108,7 +108,7 @@ public class Bomb : MonoBehaviour, IExplosive
 
     private void HurtCow()
     {
-        Debug.Log("OUCHIEEE");
+        Debug.Log("OUCHIEEE -> Bomb");
         cow.Explosion(transform.position);
         soundController.PlaySound("HurtCow");
         gameController.CowTakesDamage();

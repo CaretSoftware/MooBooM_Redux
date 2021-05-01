@@ -102,15 +102,21 @@ public class GameController : MonoBehaviour
         //If the player has already won (taken all bombs) they can't 'unwin' after enOfLevelCanvas is displayed
         if (!gameOver)  
         {
+            
             mineExploded = true;
-            if (!mineExploded && !cowTakenDamage)
+            Debug.Log("MineExploded = " + mineExploded);
+            Debug.Log("GameOver called in MineExploded()");
+            gameOver = true;
+            GameOver();
+            /*if (!mineExploded && !cowTakenDamage)
             {
-                GameOver();
-            }
+                
+            }*/
         }
     }
 
     public void GameOver() {
+        gameOver = true;
         //If a mine didn't explode and cow hasn't taken damage and exploded bombs are less than 3
         if (!mineExploded && !cowTakenDamage && explodedBombs < GOAL_NOT_REACHED)
         {
@@ -136,7 +142,7 @@ public class GameController : MonoBehaviour
         }
 
         wonLevel = numberOfStars > 0;
-        gameOver = true;
+        
         uiManager.EndOfLevel();
         Debug.Log("GAME OVER! -  " + numberOfStars + " *! \nWon?: " + wonLevel);
         SaveProgress();
@@ -146,10 +152,10 @@ public class GameController : MonoBehaviour
         SaveManager.SaveLevelStars(this, levelSelect);
     }
 
-    public void LoadProgress() {
-        /*return*/
+    /*public void LoadProgress() {
+        /*return
         int[][] chapterLevelStarsList = SaveManager.LoadSaveProgress();
-    }
+    }*/
 
     public void CowTakesDamage() {
         cowTakenDamage = true;

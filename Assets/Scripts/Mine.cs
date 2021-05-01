@@ -44,11 +44,11 @@ public class Mine : MonoBehaviour, IExplosive
 
     private void HurtCow()
     {
-        Debug.Log("OUCHIEEE");
+        Debug.Log("OUCHIEEE -> Mine");
 
         cow.Explosion(transform.position);
         soundController.PlaySound("HurtCow");
-        gameController.GameOver();
+        gameController.CowTakesDamage();
     }
 
     public void Exploded()
