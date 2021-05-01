@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1322,138 +1322,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].name
-      value: ExplosionFx
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].name
-      value: PickupBomb
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[4].name
-      value: BombThrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[5].name
-      value: Drink
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[6].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[6].name
-      value: FenceSwoosh
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[7].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[7].name
-      value: hittingGrass
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[8].name
-      value: EnglishFarmer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[9].name
-      value: SwedishFarmer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[10].name
-      value: VolumeFx
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].pitch
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[8].pitch
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[10].pitch
-      value: 1.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].volume
-      value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].volume
-      value: 1.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[4].volume
-      value: 4.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[5].volume
-      value: 2.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[7].volume
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[8].volume
-      value: 1.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f2759df12e3193d428a04660fee750b6, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 205d5b5f66e890b47a398816540ff742, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[4].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 60c877068d6fb3048941a4a6c13b5e84, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[5].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 283c78f79b80d0d4c9912295db7fb1d2, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[6].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3e85c7506cc3c1e4d91f0f696f6418ac, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[7].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8ba743d9c979f9a49a0c056db0dc31ed, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[8].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7b7734ffca83a694c931694687305e9e, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[9].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 75c9277f822da184db8a07e64e766e97, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[10].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0ec6e4958d98a904eb0e282a173e8acb, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[2].audioMixerGroup
-      value: 
-      objectReference: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
     - target: {fileID: 6163584926025476202, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1890,7 +1758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543909003
 GameObject:
@@ -5106,7 +4974,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550322902
 GameObject:
