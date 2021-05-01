@@ -8,6 +8,8 @@ public static class SaveManager{
 
     //No need to create and initialize this 3 times so it's a class variable
     private static string path = Application.persistentDataPath + "/playerProgress.save";
+    private static BinaryFormatter formatter = new BinaryFormatter();
+
 
     private static int[][] levelStarsofChapters;     //[chapter][levels]
     private static int[] levelStarsChap1 = new int[9];
@@ -15,15 +17,28 @@ public static class SaveManager{
     private static int[] levelStarsChap3 = new int[9];
 
     private static int chapter = 1;
-    public static void SaveLevelStars(GameController gameController, LevelSelect levelSelect) {
-        
-        if (levelStarsofChapters == null)
+    public static void Initialize() {
+        if (!File.Exists(path))
         {
             createANewSaveProgress();
+            CreateNewSave();
         }
+    }
 
-        BinaryFormatter formatter = new BinaryFormatter();  //Creates a binary formatter
-        //vvv -- A save path that is different on PC, Mac or i.e Android but end up in a file called "playerProgress.save"
+    private static void CreateNewSave() {
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        for (int chapter = 0; chapter < levelStarsofChapters.Length; chapter++)
+        {
+            for (int level = 0; level < levelStarsofChapters[chapter].Length; level++)
+            {
+                levelStarsofChapters[chapter][level] = 0;
+            }
+        }
+        formatter.Serialize(fileStream, levelStarsofChapters);
+        fileStream.Close();
+    }
+    public static void SaveLevelStars(GameController gameController, LevelSelect levelSelect) {
+
         FileStream fileStream = new FileStream(path, FileMode.Create); //A stream of data contained in a file
 
         if(fileStream.Length > 0)
@@ -51,9 +66,7 @@ public static class SaveManager{
         Debug.Log("Earened stars on chapter " + chapter + ": " + output);
 
         formatter.Serialize(fileStream, levelStarsofChapters);  //Write data to the file, binary
-        fileStream.Close();
-
-        
+        fileStream.Close();  
     }
 
     private static void createANewSaveProgress() {
@@ -87,6 +100,7 @@ public static class SaveManager{
                 return true;
             }
         }
+        
         return false;
     }
 
@@ -94,8 +108,6 @@ public static class SaveManager{
         FileStream fileStream = new FileStream(path, FileMode.Open);  //Open the existing data
         if (File.Exists(path) && fileStream.Length > 0)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-
             levelStarsofChapters = formatter.Deserialize(fileStream) as int[][]; //Reads the file ( -> from binary to original) casts it to int[][]
             fileStream.Close();
             return levelStarsofChapters;
