@@ -99,7 +99,7 @@ public class Bomb : MonoBehaviour, IExplosive
                 hasBeenPickedUp = true;
                 AnimatePickup();
             }
-            else
+            else if(exploding && !hasBeenPickedUp)
             {
                 HurtCow();
             }
