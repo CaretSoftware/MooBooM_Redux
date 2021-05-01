@@ -15,12 +15,28 @@ public static class SaveManager{
     private static int[] levelStarsChap3 = new int[9];
 
     private static int chapter = 1;
-    public static void SaveLevelStars(GameController gameController, LevelSelect levelSelect) {
-        
-        if (levelStarsofChapters == null)
+    public static void Initialize() {
+        if (!File.Exists(path))
         {
             createANewSaveProgress();
+            CreateNewSave();
         }
+    }
+
+    private static void CreateNewSave() {
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream fileStream = new FileStream(path, FileMode.Create);
+        for (int chapter = 0; chapter < levelStarsofChapters.Length; chapter++)
+        {
+            for (int level = 0; level < levelStarsofChapters[chapter].Length; level++)
+            {
+                levelStarsofChapters[chapter][level] = 0;
+            }
+        }
+        formatter.Serialize(fileStream, levelStarsofChapters);
+        fileStream.Close();
+    }
+    public static void SaveLevelStars(GameController gameController, LevelSelect levelSelect) {
 
         BinaryFormatter formatter = new BinaryFormatter();  //Creates a binary formatter
         //vvv -- A save path that is different on PC, Mac or i.e Android but end up in a file called "playerProgress.save"
@@ -51,9 +67,7 @@ public static class SaveManager{
         Debug.Log("Earened stars on chapter " + chapter + ": " + output);
 
         formatter.Serialize(fileStream, levelStarsofChapters);  //Write data to the file, binary
-        fileStream.Close();
-
-        
+        fileStream.Close();  
     }
 
     private static void createANewSaveProgress() {
@@ -87,6 +101,7 @@ public static class SaveManager{
                 return true;
             }
         }
+        
         return false;
     }
 
