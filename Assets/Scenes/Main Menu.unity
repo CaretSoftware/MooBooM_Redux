@@ -2134,7 +2134,7 @@ MonoBehaviour:
   musicSource: {fileID: 574293398}
   musicClip: {fileID: 8300000, guid: e94201206b3c52043b88ada46e505b51, type: 3}
   mooButtonSource: {fileID: 574293400}
-  mooButtonClip: {fileID: 8300000, guid: 1f4a270111efd75449001e168b88d9f8, type: 3}
+  mooButtonClip: {fileID: 8300000, guid: fe517696219b04f4ba20e4605057eb2c, type: 3}
 --- !u!82 &574293400
 AudioSource:
   m_ObjectHideFlags: 0
