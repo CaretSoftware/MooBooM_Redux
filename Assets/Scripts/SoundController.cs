@@ -13,6 +13,7 @@ public class SoundController : MonoBehaviour
 
     public static SoundController onlySoundController;
     private GameController gameController;
+    private MusicController musicController;
 
     private bool isInitialized;
     [SerializeField] private bool isNotLevel;
@@ -45,6 +46,7 @@ public class SoundController : MonoBehaviour
 
     private void Start()
     {
+        musicController = FindObjectOfType<MusicController>();
         gameController = FindObjectOfType<GameController>();
         if (!isNotLevel)
         {
@@ -100,4 +102,8 @@ public class SoundController : MonoBehaviour
         SearchForSound(nameOfSound).audioSource.PlayDelayed(delay);
     }
 
+    public void PlayMooButtonSound()
+    {
+        musicController.mooButtonSource.PlayOneShot(musicController.mooButtonClip);
+    }
 }

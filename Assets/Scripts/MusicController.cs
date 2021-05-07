@@ -5,9 +5,11 @@ using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
-
+    [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip musicClip;
+
+    public AudioSource mooButtonSource;
+    public AudioClip mooButtonClip;
 
     public static MusicController onlyMusicController;
 
@@ -31,10 +33,10 @@ public class MusicController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource.clip = musicClip;
-        audioSource.loop = true;
-        audioSource.Play();
+        musicSource.clip = musicClip;
+        musicSource.loop = true;
+        musicSource.Play();
+        mooButtonSource.clip = mooButtonClip;
     }
-
 
 }

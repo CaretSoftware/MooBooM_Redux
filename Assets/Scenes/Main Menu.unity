@@ -1335,13 +1335,37 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].volume
-      value: 2.96
+      propertyPath: mooButtonClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 72b7933ce5bb95e4f8396c2ce1b50fff, type: 3}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: mooButtonSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[3].audioClip
+      propertyPath: soundClips.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[11].name
+      value: ButtonMoo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[11].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[11].volume
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[11].audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5947ac9fb8443674cbab904716b4f7ec, type: 3}
+      objectReference: {fileID: 8300000, guid: 72b7933ce5bb95e4f8396c2ce1b50fff, type: 3}
+    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+      propertyPath: soundClips.Array.data[11].audioMixerGroup
+      value: 
+      objectReference: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
     - target: {fileID: 6163584926025476202, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2009,6 +2033,7 @@ GameObject:
   - component: {fileID: 574293397}
   - component: {fileID: 574293399}
   - component: {fileID: 574293398}
+  - component: {fileID: 574293400}
   m_Layer: 0
   m_Name: MusicController
   m_TagString: Untagged
@@ -2138,8 +2163,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6918e89cb6ea3da4a8f2df55750b2c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 574293398}
+  musicSource: {fileID: 574293398}
   musicClip: {fileID: 8300000, guid: e94201206b3c52043b88ada46e505b51, type: 3}
+  mooButtonSource: {fileID: 574293400}
+  mooButtonClip: {fileID: 8300000, guid: fba101c5172819746b66fdc57fe96d8f, type: 3}
+--- !u!82 &574293400
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574293396}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &604794174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,14 +6815,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1611625732}
         m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
-        m_MethodName: PlaySound
-        m_Mode: 5
+        m_MethodName: PlayMooButtonSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: ButtonClick
+          m_StringArgument: ButtonMoo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1894562533
