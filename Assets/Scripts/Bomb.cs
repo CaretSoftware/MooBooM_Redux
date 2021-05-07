@@ -1,3 +1,5 @@
+using System.Collections;
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -28,6 +30,8 @@ public class Bomb : MonoBehaviour, IExplosive
 
     private readonly float levelStartTime = 1.5f;
     private float levelStartTimer;
+
+    private Color dangerColor = new Color(.66f, 0f, 0f, 1f);
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +82,7 @@ public class Bomb : MonoBehaviour, IExplosive
             else if (timeBeforeExploding - timer < 3 && !buildUpActivated && !exploding && !hasBeenPickedUp)
             {
                 soundController.PlaySound("ExplosionBuildup");
+                StartCoroutine(Blink());
                 buildUpActivated = true;
             }
 
@@ -87,6 +92,25 @@ public class Bomb : MonoBehaviour, IExplosive
                 soundController.StopSound("ExplosionBuildup");
             }
         }
+    }
+
+    private IEnumerator Blink() {
+        Material mat =
+                GetComponentInChildren<AwesomeToon.AwesomeToonHelper>()
+                .GetMaterialInstance();
+        Color std = mat.GetColor("Color_5f0c695d5224454a8f080ea40f7f4289");
+        Color lerp;
+
+        while(timeBeforeExploding - timer >= .5f) {
+            lerp = Color.Lerp(
+                    std,
+                    dangerColor,
+                    Mathf.Sin((timeBeforeExploding - timer) * 9) * .5f + .5f);
+
+            mat.SetColor("Color_5f0c695d5224454a8f080ea40f7f4289", lerp);
+            yield return null;
+		}
+        mat.SetColor("Color_5f0c695d5224454a8f080ea40f7f4289", dangerColor);
     }
 
     void OnTriggerEnter(Collider other)

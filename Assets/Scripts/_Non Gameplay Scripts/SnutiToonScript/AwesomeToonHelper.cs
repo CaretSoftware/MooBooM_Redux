@@ -106,6 +106,9 @@ namespace AwesomeToon {
             }
 
             UpdateMaterial();
+            //GetComponent<MeshRenderer>().material.SetColor("Color", Color.red);
+            //materialInstance.SetColor("Color_5f0c695d5224454a8f080ea40f7f4289", Color.red);
+            // Color_5f0c695d5224454a8f080ea40f7f4289
         }
 
         void UpdateMaterial() {
@@ -152,6 +155,10 @@ namespace AwesomeToon {
             foreach (LightSet lightSet in sortedLights) {
                 lightSets[lightSet.id] = lightSet;
             }
+        }
+
+        public Material GetMaterialInstance() {
+            return materialInstance;
         }
 
         LightSet CalcLight(LightSet lightSet) {
