@@ -102,8 +102,8 @@ public class SoundController : MonoBehaviour
         SearchForSound(nameOfSound).audioSource.PlayDelayed(delay);
     }
 
-    public void PlayMooButtonSound()
+    public void PlayLevelLoadSound()
     {
-        musicController.mooButtonSource.PlayOneShot(musicController.mooButtonClip);
+        if(musicController != null) { musicController.PlayMooButtonSound(); }
     }
 }

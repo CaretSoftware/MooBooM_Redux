@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17757899, g: 0.2223225, b: 0.30451906, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757885, g: 0.22232221, b: 0.30451837, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 553502734525137041, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 952738958}
+      objectReference: {fileID: 1219121838}
     - target: {fileID: 3545939157600601488, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Name
       value: Mine (1)
@@ -189,7 +189,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3545939157600601491, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
   m_PrefabInstance: {fileID: 1446755}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &20296255
+--- !u!21 &101879860
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ PrefabInstance:
     - target: {fileID: 553502734525137041, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1937720752}
+      objectReference: {fileID: 454723695}
     - target: {fileID: 3545939157600601488, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Name
       value: Mine (3)
@@ -373,11 +373,115 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3545939157600601491, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
   m_PrefabInstance: {fileID: 398340721}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &454723695
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Instance of Mine_Material
+  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_648311fa47824be093509e2c47b4bf77:
+        m_Texture: {fileID: 2800000, guid: 90a2388dfe9a946e7a1589eecbe1d9b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_55e400a66bfe4e6abde483152ed6e946: 7
+    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -2.5
+    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
+    m_Colors:
+    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.29411766, g: 0, b: 0, a: 1}
+    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
+    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
+    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &595925161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4480323914822503392, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
   m_PrefabInstance: {fileID: 4480323915367568201}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &634468165
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Instance of Mine_Material
+  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_648311fa47824be093509e2c47b4bf77:
+        m_Texture: {fileID: 2800000, guid: 90a2388dfe9a946e7a1589eecbe1d9b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_55e400a66bfe4e6abde483152ed6e946: 7
+    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -2.5
+    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
+    m_Colors:
+    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.29411766, g: 0, b: 0, a: 1}
+    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
+    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
+    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1001 &671776963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -388,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 553502734525137041, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1297210072}
+      objectReference: {fileID: 1795193113}
     - target: {fileID: 3545939157600601488, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Name
       value: Mine
@@ -449,7 +553,7 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6287917202653981639, guid: 214eadbcb2b114a1c96b3eadf09aa2bd, type: 3}
   m_PrefabInstance: {fileID: 6287917202772649144}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &896691278
+--- !u!21 &881844686
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -788,58 +892,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea496487d9cfd4645b66217aa90b4215, type: 3}
---- !u!21 &952738958
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Instance of Mine_Material
-  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_648311fa47824be093509e2c47b4bf77:
-        m_Texture: {fileID: 2800000, guid: 90a2388dfe9a946e7a1589eecbe1d9b8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_55e400a66bfe4e6abde483152ed6e946: 7
-    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -2.5
-    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
-    m_Colors:
-    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.29411766, g: 0, b: 0, a: 1}
-    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
-    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
-    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
-    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
-    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &1062587961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -904,10 +956,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97957063309550969, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 97957063309550969, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 97957063309550969, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 798036834213867968, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2043863354}
+    - target: {fileID: 2122803350651198578, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 2122803350651198578, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122803350651198578, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2483498686294794965, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -923,6 +999,18 @@ PrefabInstance:
     - target: {fileID: 2483498686294794965, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741023067003492674, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 2741023067003492674, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741023067003492674, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2807265134225302402, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchorMax.y
@@ -943,6 +1031,10 @@ PrefabInstance:
     - target: {fileID: 2807265134227480728, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_Name
       value: LevelSelectCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807265134227480728, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2807265134227480734, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_RootOrder
@@ -1084,6 +1176,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4987903020832640002, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 4987903020832640002, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987903020832640002, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644227451320259227, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 5644227451320259227, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644227451320259227, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5888858658958697503, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1131,6 +1247,42 @@ PrefabInstance:
     - target: {fileID: 5891217554186261507, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897279262561348517, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 5897279262561348517, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897279262561348517, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052952499245376526, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 7052952499245376526, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052952499245376526, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257740308918801625, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 7257740308918801625, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257740308918801625, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7749679176157332613, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1231,6 +1383,18 @@ PrefabInstance:
     - target: {fileID: 8863716474317148554, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901087207001991955, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 8901087207001991955, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayLevelLoadSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901087207001991955, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundController, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
@@ -1400,7 +1564,7 @@ PrefabInstance:
     - target: {fileID: 5730014964384449188, guid: 6fed350ea3c1443aabca1075e1280409, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 20296255}
+      objectReference: {fileID: 101879860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed350ea3c1443aabca1075e1280409, type: 3}
 --- !u!4 &1197075739 stripped
@@ -1469,39 +1633,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
---- !u!1 &1244854251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!114 &1212703672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
+  m_PrefabInstance: {fileID: 1212703671}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1244854252}
-  m_Layer: 0
-  m_Name: Bombs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1244854252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244854251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.69945, y: 207.26666, z: -25.294151}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1197075739}
-  - {fileID: 1809333943}
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1297210072
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1645bcd5b475a914992a85a78ac2993c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!21 &1219121838
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1553,6 +1696,38 @@ Material:
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
     - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!1 &1244854251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244854252}
+  m_Layer: 0
+  m_Name: Bombs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244854252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244854251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148.69945, y: 207.26666, z: -25.294151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1197075739}
+  - {fileID: 1809333943}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1364999562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1563,7 +1738,7 @@ PrefabInstance:
     - target: {fileID: 553502734525137041, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1525991579}
+      objectReference: {fileID: 634468165}
     - target: {fileID: 3545939157600601488, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
       propertyPath: m_Name
       value: Mine (2)
@@ -1619,59 +1794,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3545939157600601491, guid: e802a6e7351354898b385889bfbcec9d, type: 3}
   m_PrefabInstance: {fileID: 1364999562}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1413753650
-Material:
-  serializedVersion: 6
+--- !u!1 &1581938973
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Instance of Bomb_Material
-  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_648311fa47824be093509e2c47b4bf77:
-        m_Texture: {fileID: 2800000, guid: 7d09c9a9fd3974e929f74d52eb1a4e17, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_55e400a66bfe4e6abde483152ed6e946: 82.1
-    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -4.4
-    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
-    m_Colors:
-    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.16209793, g: 0, b: 0.5471698, a: 1}
-    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
-    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
-    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
-    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
-    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1525991579
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581938974}
+  m_Layer: 0
+  m_Name: Mines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1581938974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581938973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148.69945, y: 207.26666, z: -25.294151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 671776964}
+  - {fileID: 1446756}
+  - {fileID: 398340722}
+  - {fileID: 1364999563}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1795193113
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1723,40 +1880,6 @@ Material:
     - _L2_color: {r: 0, g: 0, b: 0, a: 1}
     - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!1 &1581938973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1581938974}
-  m_Layer: 0
-  m_Name: Mines
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1581938974
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581938973}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.69945, y: 207.26666, z: -25.294151}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 671776964}
-  - {fileID: 1446756}
-  - {fileID: 398340722}
-  - {fileID: 1364999563}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1809333942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1815,7 +1938,7 @@ PrefabInstance:
     - target: {fileID: 5730014964384449188, guid: 6fed350ea3c1443aabca1075e1280409, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1413753650}
+      objectReference: {fileID: 2090252584}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fed350ea3c1443aabca1075e1280409, type: 3}
 --- !u!4 &1809333943 stripped
@@ -1823,58 +1946,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5214758269107453218, guid: 6fed350ea3c1443aabca1075e1280409, type: 3}
   m_PrefabInstance: {fileID: 1809333942}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1937720752
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Instance of Mine_Material
-  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_648311fa47824be093509e2c47b4bf77:
-        m_Texture: {fileID: 2800000, guid: 90a2388dfe9a946e7a1589eecbe1d9b8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_55e400a66bfe4e6abde483152ed6e946: 7
-    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -2.5
-    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
-    m_Colors:
-    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.29411766, g: 0, b: 0, a: 1}
-    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
-    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
-    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
-    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
-    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
-    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1001 &1983752859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1951,6 +2022,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1c6ea51f0bcee418007c6fd27bf9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &2090252584
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Instance of Bomb_Material
+  m_Shader: {fileID: -6465566751694194690, guid: 1b60cf9a3bde645fda6708dded53b040, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_55a5fb1c1eb146649918194d5c472f14:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_648311fa47824be093509e2c47b4bf77:
+        m_Texture: {fileID: 2800000, guid: 7d09c9a9fd3974e929f74d52eb1a4e17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_55e400a66bfe4e6abde483152ed6e946: 82.1
+    - Vector1_84c9dc57401340259aa1ea71c8c37de7: -4.4
+    - Vector1_bd418cc24544493bbd0051ea09e367c1: 2.9
+    m_Colors:
+    - Color_5f0c695d5224454a8f080ea40f7f4289: {r: 0.16209793, g: 0, b: 0.5471698, a: 1}
+    - Color_abe765f789644499bd879a1df0453379: {r: 2.3796895, g: 2.3796895, b: 2.3796895, a: 0}
+    - Color_ac2964808fa0449c9ed0017eb6d99a2c: {r: 2.9960785, g: 2.9960785, b: 2.9960785, a: 1}
+    - _L1_color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0.99}
+    - _L1_dir: {r: -0, g: 0.8660253, b: 0.5000001, a: 0}
+    - _L2_color: {r: 0, g: 0, b: 0, a: 1}
+    - _L2_dir: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1001 &2123281865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2096,10 +2219,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1093878943}
+    - target: {fileID: 4480323914124520905, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
     - target: {fileID: 4480323914795391468, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1093878943}
+    - target: {fileID: 4480323914795391468, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
     - target: {fileID: 4480323914822503392, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
       propertyPath: m_Name
       value: EndOfLevelCanvas
@@ -2155,15 +2286,19 @@ PrefabInstance:
     - target: {fileID: 4480323914987621265, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 1212703672}
+    - target: {fileID: 4480323914987621265, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
       objectReference: {fileID: 2043863354}
     - target: {fileID: 6239107528389318256, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2043863354}
     - target: {fileID: 6239107528389318256, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoMainMenu
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1212703672}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e0d32439dd62dc43b6ce9b9a585c917, type: 3}
 --- !u!114 &4480323915367568202 stripped
@@ -2280,7 +2415,7 @@ PrefabInstance:
     - target: {fileID: 6287917202653981636, guid: 214eadbcb2b114a1c96b3eadf09aa2bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 896691278}
+      objectReference: {fileID: 881844686}
     - target: {fileID: 6287917202653981638, guid: 214eadbcb2b114a1c96b3eadf09aa2bd, type: 3}
       propertyPath: m_RootOrder
       value: 14

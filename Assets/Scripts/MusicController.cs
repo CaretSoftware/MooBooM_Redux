@@ -39,4 +39,9 @@ public class MusicController : MonoBehaviour
         mooButtonSource.clip = mooButtonClip;
     }
 
+    public void PlayMooButtonSound()
+    {
+        mooButtonSource.PlayOneShot(mooButtonClip);
+    }
+
 }
