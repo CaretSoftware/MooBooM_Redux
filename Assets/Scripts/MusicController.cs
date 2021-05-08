@@ -11,6 +11,12 @@ public class MusicController : MonoBehaviour
     public AudioSource mooButtonSource;
     public AudioClip mooButtonClip;
 
+    public AudioSource winSoundSource;
+    public AudioClip winSoundClip;
+
+    public AudioSource looseSoundSource;
+    public AudioClip looseSoundClip;
+
     public static MusicController onlyMusicController;
 
 
@@ -37,11 +43,23 @@ public class MusicController : MonoBehaviour
         musicSource.loop = true;
         musicSource.Play();
         mooButtonSource.clip = mooButtonClip;
+        winSoundSource.clip = winSoundClip;
+        looseSoundSource.clip = looseSoundClip;
     }
 
     public void PlayMooButtonSound()
     {
         mooButtonSource.PlayOneShot(mooButtonClip);
+    }
+
+    public void PlayWinSound()
+    {
+        winSoundSource.PlayOneShot(winSoundClip);
+    }
+
+    public void PlayLooseSound()
+    {
+        looseSoundSource.PlayOneShot(looseSoundClip);
     }
 
 }

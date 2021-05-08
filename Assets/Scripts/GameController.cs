@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     private LevelSelect levelSelect;
+    private MusicController musicController;
     private Gyroscope gyroScope;
     private UIManager uiManager;
     private Cow cow;
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour
         levelSelect = FindObjectOfType<LevelSelect>();
         uiManager = FindObjectOfType<UIManager>();
         gyroScope = FindObjectOfType<Gyroscope>();
+        musicController = FindObjectOfType<MusicController>();
         cow = FindObjectOfType<Cow>();
 
         //Finds all bomb-object in the game and adds them to a list
@@ -136,7 +138,18 @@ public class GameController : MonoBehaviour
         }
 
         wonLevel = numberOfStars > 0;
-        
+
+        if(musicController != null) {
+        if (wonLevel)
+        {
+            musicController.PlayWinSound();
+        }
+        else
+        {
+            musicController.PlayLooseSound();
+        }
+        }
+
         uiManager.EndOfLevel();
         Debug.Log("GAME OVER! -  " + numberOfStars + " *! \nWon?: " + wonLevel);
         SaveProgress();
