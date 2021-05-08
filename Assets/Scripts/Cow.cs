@@ -68,11 +68,11 @@ public class Cow : MonoBehaviour {
         {
 			rollSound.audioSource.pitch = speed / nominalSpeed;
 		}
-		if (rollSound.audioSource.isPlaying == false && speed >= 0.1f && collision.gameObject.tag == "Ground")
+		if (rollSound.audioSource.isPlaying == false && speed >= 0.7f && collision.gameObject.tag == "Ground")
 		{
 			soundController.PlaySound("CowRoll");
 		}
-		else if (rollSound.audioSource.isPlaying == true && speed < 0.1f && collision.gameObject.tag == "Ground")
+		else if (rollSound.audioSource.isPlaying == true && speed < 0.8f && collision.gameObject.tag == "Ground")
 		{
 			soundController.PauseSound("CowRoll");
 		}
