@@ -87,6 +87,11 @@ public class SoundController : MonoBehaviour
         SearchForSound(nameOfSound).audioSource.Stop();
     }
 
+    public void PauseSound(string nameOfSound)
+    {
+        SearchForSound(nameOfSound).audioSource.Pause();
+    }
+
     public void StopSoundLoop(string nameOfSound)
     {
         SearchForSound(nameOfSound).audioSource.loop = false;
@@ -105,5 +110,10 @@ public class SoundController : MonoBehaviour
     public void PlayLevelLoadSound()
     {
         if(musicController != null) { musicController.PlayMooButtonSound(); }
+    }
+
+    public Sound GetSound(string nameOfSound)
+    {
+        return SearchForSound(nameOfSound);
     }
 }
