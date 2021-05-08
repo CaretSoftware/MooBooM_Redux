@@ -8,7 +8,7 @@ public class BombCountdownCanvas : MonoBehaviour
     private Camera cam;
     private Canvas canvas;
     private string textToDisplay;
-    [SerializeField] [Range(0, 300)] private int maxFontSize = 90;
+    [SerializeField] [Range(0, 300)] private int maxFontSize = 70;
     [SerializeField] [Range(0f, 1f)] private float delay = 0.5f;
 
     //[SerializeField] private Color textColor;
@@ -36,8 +36,8 @@ public class BombCountdownCanvas : MonoBehaviour
         float scaleFactor = canvas.scaleFactor;
 
         Vector2 scaledPosition = new Vector2(
-                    screenPosition.x / scaleFactor,
-                    screenPosition.y / scaleFactor);
+                    screenPosition.x / scaleFactor - 100,
+                    screenPosition.y / scaleFactor + 25);
         if (hasExploded || hasBeenPickedUp)
         {
             textToDisplay = "";
@@ -51,17 +51,18 @@ public class BombCountdownCanvas : MonoBehaviour
             if (decimals > delay)
             {
                 float inverseDecimals = Mathf.InverseLerp(1f, delay, decimals);
-                inverseDecimals = Ease.EaseOutBack(inverseDecimals);
+                //inverseDecimals = Ease.EaseOutBack(inverseDecimals);
                 if (time < 4)
                 {
-                    //bombText[bomb].color = textColor;
-                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize + 80, inverseDecimals);
+                    inverseDecimals = Ease.EaseOutElastic(inverseDecimals);
+                    //fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize + 40, inverseDecimals);
                 }
                 else 
-                { 
-                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals); 
+                {
+                    inverseDecimals = Ease.EaseOutBack(inverseDecimals);
+                    //fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals); 
                 }
-
+                fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals);
             }
 
                 bombText[bomb].fontSize = fontSizeBouncy;
