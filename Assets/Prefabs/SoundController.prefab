@@ -129,7 +129,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: CowRoll
-    audioClip: {fileID: 8300000, guid: 4136c6b036cd22b4e86a2d8ccd145ff8, type: 3}
+    audioClip: {fileID: 8300000, guid: 6a27a9afbbe022f4dbc5ce594349eac7, type: 3}
     loop: 1
     pitch: 1
     volume: 3.72

@@ -47,15 +47,6 @@ public class Cow : MonoBehaviour {
 		rb.useGravity = gravity;
 	}
 
-	/*private void PlayRollSound()
-    {
-		
-		rollSound.audioSource.pitch = rb.velocity.magnitude / nominalSpeed;
-		soundController.PlaySound("CowRoll");
-	}*/
-
-
-
 
     private void OnCollisionStay(Collision collision)
     {
@@ -64,17 +55,21 @@ public class Cow : MonoBehaviour {
 			rollSound.audioSource.pitch = (speed / nominalSpeed) / 5;
 
         }
-        else
+        else if(speed >= 3f)
         {
 			rollSound.audioSource.pitch = speed / nominalSpeed;
+        }else if(speed < 3f)
+        {
+			rollSound.audioSource.pitch = 2.7f;
+
 		}
 		if (rollSound.audioSource.isPlaying == false && speed >= 0.7f && collision.gameObject.tag == "Ground")
 		{
 			soundController.PlaySound("CowRoll");
 		}
-		else if (rollSound.audioSource.isPlaying == true && speed < 0.8f && collision.gameObject.tag == "Ground")
+		else if (rollSound.audioSource.isPlaying == true && speed < 0.7f && collision.gameObject.tag == "Ground")
 		{
-			soundController.PauseSound("CowRoll");
+			soundController.StopSound("CowRoll");
 		}
 	}
 
