@@ -137,7 +137,14 @@ MonoBehaviour:
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: HittingFence
     audioClip: {fileID: 8300000, guid: 226013692f0126147bb103fcd72e8c00, type: 3}
-    loop: 1
+    loop: 0
+    pitch: 1
+    volume: 0.83
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: HittingFenceMoo
+    audioClip: {fileID: 8300000, guid: 2d717cfa4b6442b4c9fcd50ccc5a111f, type: 3}
+    loop: 0
     pitch: 1
     volume: 0.83
     audioSource: {fileID: 0}

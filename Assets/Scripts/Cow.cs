@@ -7,14 +7,23 @@ public class Cow : MonoBehaviour {
 	[SerializeField] private Rigidbody rb;
 	private SoundController soundController;
 	Sound rollSound;
+	Sound hittingFence;
+	Sound hittingFenceMoo;
+
+	bool mooHit = false;
 
 	float nominalSpeed = 1f;
 	float speed;
+
+	private float minCollisionVolume = 0.1f;
+	private float impactToVolumeRatio = 0.2f;
 
 	private void Start() {
 		Freeze();
 		soundController = FindObjectOfType<SoundController>();
 		rollSound = soundController.GetSound("CowRoll");
+		hittingFence = soundController.GetSound("HittingFence");
+		hittingFenceMoo = soundController.GetSound("HittingFenceMoo");
 	}
 
     private void FixedUpdate()
@@ -82,13 +91,24 @@ public class Cow : MonoBehaviour {
 		}
 	}
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Fence")
         {
-			soundController.PlaySound("HittingFence");
+			float volume = collision.relativeVelocity.magnitude * impactToVolumeRatio;
+			volume = Mathf.Clamp(volume, minCollisionVolume, 3f);
+			if (mooHit)
+			{
+				hittingFenceMoo.audioSource.PlayOneShot(hittingFenceMoo.audioClip, volume);
+				mooHit = false;
+			}
+			else
+			{
+				hittingFence.audioSource.PlayOneShot(hittingFence.audioClip, volume);
+				mooHit = true;
+			}
         }
     }
-	*/
+	
 
 }
