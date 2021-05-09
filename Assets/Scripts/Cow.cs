@@ -50,6 +50,7 @@ public class Cow : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
+
 		if(Time.timeScale == 0.2f)
         {
 			rollSound.audioSource.pitch = (speed / nominalSpeed) / 5;
@@ -80,5 +81,13 @@ public class Cow : MonoBehaviour {
 			soundController.PauseSound("CowRoll");
 		}
 	}
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Fence")
+        {
+			soundController.PlaySound("HittingFence");
+        }
+    }*/
 
 }
