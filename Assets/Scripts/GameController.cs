@@ -41,16 +41,19 @@ public class GameController : MonoBehaviour
         numberOfStars = 3;
         bombsPickedUp = 0;
         Time.timeScale = 1; //If previous level ended with a slow-motion pickUp this will reset the next level
-        if(musicController != null && musicController.musicSource.pitch != 1f)
-        {
-            musicController.musicSource.pitch = 1f;
-        }
+    
 
         levelSelect = FindObjectOfType<LevelSelect>();
         uiManager = FindObjectOfType<UIManager>();
         gyroScope = FindObjectOfType<Gyroscope>();
         musicController = FindObjectOfType<MusicController>();
         cow = FindObjectOfType<Cow>();
+
+        //Change music if slow-motion was activated in previous level
+        if (musicController != null && musicController.musicSource.pitch != 1f)
+        {
+            musicController.musicSource.pitch = 1f;
+        }
 
         //Finds all bomb-object in the game and adds them to a list
         Bomb[] bombArray = FindObjectsOfType<Bomb>();
