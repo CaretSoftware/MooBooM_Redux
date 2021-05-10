@@ -2148,7 +2148,7 @@ MonoBehaviour:
   winSoundSource: {fileID: 574293401}
   winSoundClip: {fileID: 8300000, guid: cf546b025b78cda43adf920030c039a4, type: 3}
   looseSoundSource: {fileID: 574293402}
-  looseSoundClip: {fileID: 8300000, guid: 29bb466cc3360014db7ee40fdedb9539, type: 3}
+  looseSoundClip: {fileID: 8300000, guid: 91ca6d96589639d4980f0fb771e34a45, type: 3}
 --- !u!82 &574293400
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2353,7 +2353,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.53
   m_Pitch: 1
   Loop: 0
   Mute: 0
