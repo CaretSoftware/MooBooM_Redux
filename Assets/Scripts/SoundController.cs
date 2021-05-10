@@ -116,4 +116,20 @@ public class SoundController : MonoBehaviour
     {
         return SearchForSound(nameOfSound);
     }
+
+    public void ChangePitchForAll(float pitchToSet)
+    {
+        foreach(Sound sound in soundClips)
+        {
+            sound.audioSource.pitch = pitchToSet;
+        }
+    }
+
+    public void ResetPitchForAll()
+    {
+        foreach(Sound sound in soundClips)
+        {
+            sound.audioSource.pitch = sound.pitch;
+        }
+    }
 }

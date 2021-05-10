@@ -41,6 +41,10 @@ public class GameController : MonoBehaviour
         numberOfStars = 3;
         bombsPickedUp = 0;
         Time.timeScale = 1; //If previous level ended with a slow-motion pickUp this will reset the next level
+        if(musicController != null && musicController.musicSource.pitch != 1f)
+        {
+            musicController.musicSource.pitch = 1f;
+        }
 
         levelSelect = FindObjectOfType<LevelSelect>();
         uiManager = FindObjectOfType<UIManager>();

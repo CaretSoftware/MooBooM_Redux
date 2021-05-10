@@ -5,8 +5,8 @@ using UnityEngine.Audio;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioClip musicClip;
+    public AudioSource musicSource;
+    public AudioClip musicClip;
 
     public AudioSource mooButtonSource;
     public AudioClip mooButtonClip;
