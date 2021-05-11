@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class LevelSelectButtonAnimator : MonoBehaviour {
 
-	[SerializeField] private float openTime = .5f;
-	[SerializeField] private float closeTime = .5f;
 	[SerializeField] private RectTransform levelSelect;
 	[SerializeField] private RectTransform buttons;
 	[SerializeField] private Image image;
@@ -30,10 +27,6 @@ public class LevelSelectButtonAnimator : MonoBehaviour {
 		StopAllCoroutines();
 		StartCoroutine(OpenLevelSelect(!isOpen));
 	}
-
-	//public void Close() {
-	//	StartCoroutine(OpenLevelSelect(false));
-	//}
 
     private IEnumerator OpenLevelSelect(bool open) {
 		isOpen = open;
