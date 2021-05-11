@@ -121,6 +121,7 @@ public class SoundController : MonoBehaviour
     {
         foreach(Sound sound in soundClips)
         {
+            //if(sound.name != "DrinkChocolate")
             sound.audioSource.pitch = pitchToSet;
         }
     }

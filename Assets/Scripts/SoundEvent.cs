@@ -25,7 +25,13 @@ public class SoundEvent : MonoBehaviour
 
     public void DrinkMilk()
     {
+        if (gameObject.CompareTag("ChocolateMilk"))
+        {
+            soundController.PlaySound("DrinkChocolate");
+        }
+        else {
         soundController.PlaySound("Drink");
+        }
     }
 
     public void PickupBomb()
