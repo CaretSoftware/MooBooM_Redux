@@ -35,13 +35,19 @@ public class LevelSelectButtonAnimator : MonoBehaviour {
 		float e;
 		while (open ? t < end : t > end) {
 			e = open ? Ease.EaseOutElastic(t) : Ease.EaseInBounce(t);
-			levelSelect.anchoredPosition = Vector2.LerpUnclamped(levelSelectClosedPos, levelSelectOpenPos, e);
-			levelSelect.sizeDelta = Vector2.LerpUnclamped(levelSelectSizeDeltaClosed, levelSelectSizeDeltaOpen, e);
-			image.pixelsPerUnitMultiplier = Mathf.LerpUnclamped(pixelsPerUnitClosed, pixelsPerUnitOpen, e);
-			buttons.sizeDelta = Vector2.LerpUnclamped(buttonsSizeDeltaClosed, buttonsSizeDeltaOpen, e);
-			buttonText.localScale = Vector2.LerpUnclamped(buttonTextScaleClosed, buttonTextScaleOpen, e);
+			levelSelect.anchoredPosition =
+					Vector2.LerpUnclamped(levelSelectClosedPos, levelSelectOpenPos, e);
+			levelSelect.sizeDelta =
+					Vector2.LerpUnclamped(levelSelectSizeDeltaClosed, levelSelectSizeDeltaOpen, e);
+			image.pixelsPerUnitMultiplier =
+					Mathf.LerpUnclamped(pixelsPerUnitClosed, pixelsPerUnitOpen, e);
+			buttons.sizeDelta =
+					Vector2.LerpUnclamped(buttonsSizeDeltaClosed, buttonsSizeDeltaOpen, e);
+			buttonText.localScale =
+					Vector2.LerpUnclamped(buttonTextScaleClosed, buttonTextScaleOpen, e);
 			float fade = Ease.EaseInExpo(t * 2f);
-			buttonTextGroup.alpha = open ? Mathf.Lerp(0f, 1f, fade) : Mathf.Lerp(alphaOutTarget, 1f, fade);
+			buttonTextGroup.alpha =
+					open ? Mathf.Lerp(0f, 1f, fade) : Mathf.Lerp(alphaOutTarget, 1f, fade);
 			t = open ? t += Time.deltaTime : t -= Time.deltaTime * 2f;
 			yield return null;
 		}
