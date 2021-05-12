@@ -156,4 +156,11 @@ MonoBehaviour:
     volume: 2.88
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: SpeedBack
+    audioClip: {fileID: 8300000, guid: 4a505ddf3a7ac764e8ce20aeea84b965, type: 3}
+    loop: 0
+    pitch: 1
+    volume: 2.88
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   isNotLevel: 0

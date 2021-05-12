@@ -13,6 +13,7 @@ public class ChocolateMilkPickup : MonoBehaviour
     private float timeBeforeReset = 3f;
 
     private bool isSlowMotion;
+    private bool speedBackPlaying;
 
     private string pickup = "Pickup";
 
@@ -25,11 +26,12 @@ public class ChocolateMilkPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer >= timeBeforeReset)
+        if (timer >= timeBeforeReset && isSlowMotion)
         {
+            soundController.PlaySound("SpeedBack");
             Time.timeScale = 1.0f;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            if(musicController != null)
+            if (musicController != null)
             {
                 musicController.musicSource.pitch = 1f;
             }

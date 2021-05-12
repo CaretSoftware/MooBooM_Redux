@@ -37,8 +37,15 @@ public class Mine : MonoBehaviour, IExplosive
             isExploding = true;
             soundController.PlaySound("ExplosionFx");
             AnimateExplosion();
-            
-            HurtCow();
+            if (!soundController.GetSound("HurtCow").audioSource.isPlaying)
+            {
+                soundController.PlaySound("HurtCow");
+            }
+            else
+            {
+                soundController.StopSound("HurtCow");
+                soundController.PlaySound("HurtCow");
+            }
         }
     }
 

@@ -76,7 +76,6 @@ public class Bomb : MonoBehaviour, IExplosive
             if (exploding && !hasExploded)
             {
                 hasExploded = true;
-                //LocalisationSystem.SetLanguage("English");
                 AnimateExplosion();
             }
             else if (timeBeforeExploding - timer < 3 && !buildUpActivated && !exploding && !hasBeenPickedUp)
@@ -134,7 +133,15 @@ public class Bomb : MonoBehaviour, IExplosive
     {
         Debug.Log("OUCHIEEE -> Bomb");
         cow.Explosion(transform.position);
-        soundController.PlaySound("HurtCow");
+        if (!soundController.GetSound("HurtCow").audioSource.isPlaying)
+        {
+            soundController.PlaySound("HurtCow");
+        }
+        else
+        {
+            soundController.StopSound("HurtCow");
+            soundController.PlaySound("HurtCow");
+        }
 
         if (!gameController.isCowAlreadyHurt())
         {
