@@ -147,14 +147,14 @@ public class GameController : MonoBehaviour
         wonLevel = numberOfStars > 0;
 
         if(musicController != null) {
-        if (wonLevel)
-        {
-            musicController.PlayWinSound();
-        }
-        else
-        {
-            musicController.PlayLooseSound();
-        }
+            if (wonLevel)
+            {
+                musicController.PlayWinSound();
+            }
+            else
+            {
+                musicController.PlayLooseSound();
+            }
         }
 
         uiManager.EndOfLevel();
@@ -174,9 +174,14 @@ public class GameController : MonoBehaviour
     public void CowTakesDamage() {
         cowTakenDamage = true;
     }
+
     public bool isCowAlreadyHurt() {
         return cowTakenDamage;
     }
+
+    public bool GetMineExploded() {
+        return mineExploded;
+	}
 
     public int getExplodedBombsCount() {
         return explodedBombs;

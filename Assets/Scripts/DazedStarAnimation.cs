@@ -10,7 +10,8 @@ public class DazedStarAnimation : MonoBehaviour {
 	[SerializeField] private float tilt = 200f;
 	[SerializeField] private Vector2 anchor;
 
-	private void Start() {
+	public void OnEnable() {
+		StopAllCoroutines();
 		for (int i = 0; i < stars.Length; i++) {
 			StartCoroutine(Rotate(i));
 		}

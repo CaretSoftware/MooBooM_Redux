@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     private GameObject optionsPanel;    //temp private because don't have an options panel yet
-    private GameObject endOfLevelCanvas;
+    private WinScreen winScreen;
     private GameObject levelSelectCanvas;
     private GameController gameController;
     [SerializeField] private Button playNextButton;
@@ -15,11 +15,12 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        levelSelectCanvas = GameObject.Find("LevelSelectCanvas");
-        levelSelectCanvas.SetActive(false);
-        endOfLevelCanvas = GameObject.Find("EndOfLevelCanvas");
-        disableEndOfLevelCanvas();
-    }
+        winScreen = FindObjectOfType<WinScreen>();
+        winScreen.gameObject.SetActive(false);
+		//disableEndOfLevelCanvas(true);
+		//levelSelectCanvas = GameObject.Find("LevelSelectCanvas");
+		//levelSelectCanvas.SetActive(false);
+	}
 
     public void OptionsPanel()
     {
@@ -35,15 +36,16 @@ public class UIManager : MonoBehaviour
 
     public void EndOfLevel()
     {
-        endOfLevelCanvas.SetActive(true);
-        DisplayRightAmountOfStars();
+        winScreen.gameObject.SetActive(true);
+        winScreen.Display();
+        //DisplayRightAmountOfStars();
         
 
-        if (!gameController.isLevelWon())
-        {
-            DisablePlayNextButton();
-            DisplayLoosingCross();
-        } 
+        //if (!gameController.isLevelWon())
+        //{
+            //DisablePlayNextButton();
+            //DisplayLoosingCross();
+        //} 
 
     }
     
@@ -55,9 +57,10 @@ public class UIManager : MonoBehaviour
         levelSelectCanvas.SetActive(false);
     }
 
-    public void disableEndOfLevelCanvas() {
-        if(endOfLevelCanvas != null)    //In overworld there is not endOfLevelCanvas, so need this check here
-            endOfLevelCanvas.SetActive(false);
+    public void DisableEndOfLevelCanvas() {
+        if(winScreen != null)    //In overworld there is not endOfLevelCanvas, so need this check here
+            winScreen.gameObject.SetActive(false);
+
     }
 
     public void GoMainMenu()
@@ -77,15 +80,15 @@ public class UIManager : MonoBehaviour
         {
             for (int i = 1; i <= starsEarned; i++)
             {
-                endOfLevelCanvas.transform.GetChild(0).Find("Star" + i).gameObject.SetActive(true);
+                //winScreen.transform.GetChild(0).Find("Star" + i).gameObject.SetActive(true);
             }
         }
     }
 
     private void DisplayLoosingCross()
     {
-        endOfLevelCanvas.transform.GetChild(0).Find("LoosingCross").gameObject.SetActive(true);
-    }
+		winScreen.transform.GetChild(0).Find("LoosingCross").gameObject.SetActive(true);
+	}
 
     private void DisablePlayNextButton() {
             playNextButton.interactable = false;

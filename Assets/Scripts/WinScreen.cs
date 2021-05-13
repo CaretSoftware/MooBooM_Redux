@@ -9,7 +9,9 @@ public class WinScreen : MonoBehaviour {
 	[SerializeField] private Transform canvas;
 	[SerializeField] private GameObject[] stars;
 	[SerializeField] private GameObject starHolder;
-	[SerializeField] private GameObject gameOverImage;
+	[SerializeField] private GameObject gameOverDisplay;
+	[SerializeField] private Image gameOverImage;
+	[SerializeField] private Sprite bombSprite;
 	[SerializeField] private LevelSelect levelSelect;
 	[SerializeField] private Image[] bombCount;
 	[SerializeField] private GameObject[] bombCountHolders;
@@ -19,15 +21,15 @@ public class WinScreen : MonoBehaviour {
 	private GameController gameController;
 	private UIManager uiManager;
 
-	private void Start() {
+	private void Awake() {
 		gameController = FindObjectOfType<GameController>();
 		uiManager = FindObjectOfType<UIManager>();
 	}
 
-	private void OnEnable() {
-		Display();
-	}
-	
+	//private void OnEnable() {
+	//	Display();
+	//}
+
 	public void OpenLevelSelect() {
 		PlayClickSound();
 
@@ -59,13 +61,17 @@ public class WinScreen : MonoBehaviour {
 		levelSelect.loadLevel(level);
 	}
 
-	private void Display() {
-		if (true) {//gameController.isLevelWon()) { FIXME
-			DisplayStars();
-			StartCoroutine(ShowPickedUpBombs());
-		} else {
+	public void Display() {
+		if (gameController.GetMineExploded()) {
 			DisplayGameOverImage();
 			StartCoroutine(ShowPickedUpBombs(false));
+		} else if (gameController.isCowAlreadyHurt()) {
+			Debug.Log("X MINE");
+			DisplayGameOverImage(true, true);
+			StartCoroutine(ShowPickedUpBombs(false));
+		} else {
+			DisplayStars();
+			StartCoroutine(ShowPickedUpBombs());
 		}
 	}
 
@@ -75,13 +81,16 @@ public class WinScreen : MonoBehaviour {
 		DisplayGameOverImage(false);
 		DisplayStarHolder(true);
 		for (int i = 0; i < stars.Length; i++) {
-			stars[i].SetActive(true);//i < starsEarned); FIXME
+			stars[i].SetActive(true);//i < starsEarned); FIXME?
 		}
 	}
 
-	public void DisplayGameOverImage(bool show = true) {
+	public void DisplayGameOverImage(bool show = true, bool bomb = false) {
 		DisplayStarHolder(false);
-		gameOverImage.SetActive(show);
+		if (bomb) {
+			gameOverImage.sprite = bombSprite;
+		}
+		gameOverDisplay.SetActive(show);
 	}
 
 	private void DisplayStarHolder(bool show) {
@@ -89,8 +98,8 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	private IEnumerator ShowPickedUpBombs(bool won = true) {
-		int numTotalBombs = (0+0+3);// gameController.getStartngBombCount(); FIXME
-		int numPickedUpBombs = (0+0+0);// gameController.getPickedUpBombsCount(); FIXME
+		int numTotalBombs = gameController.getStartngBombCount();
+		int numPickedUpBombs = gameController.getPickedUpBombsCount();
 
 		for (int i = 1; i < bombCountRows.Length; i++) {
 			bombCountRows[i].SetActive(numTotalBombs > numOfBombCountInRow * i);
@@ -105,9 +114,9 @@ public class WinScreen : MonoBehaviour {
 		float e;
 		int star = 3;
 
-		for (int i = 0; i < numTotalBombs; i++) {
-			bombCount[i].enabled = i < numPickedUpBombs;
-			if (won) {
+		if (won) {
+			for (int i = 0; i < numTotalBombs; i++) {
+				bombCount[i].enabled = i < numPickedUpBombs;
 				t += 1f / numTotalBombs;
 				e = Mathf.Lerp(Ease.EaseInQuint(1f - t), Ease.EaseInQuint(t), t) * .25f;
 
@@ -171,7 +180,7 @@ public class WinScreen : MonoBehaviour {
 		Vector2 starStartPos = starRect.anchoredPosition + Vector2.up
 				* starRect.parent.GetComponent<RectTransform>().anchoredPosition.y;
 		star.transform.SetParent(canvas, false);
-		star.transform.SetAsLastSibling(); // TODO FIXME?
+		star.transform.SetAsLastSibling();
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(
 				starRect,
 				Camera.main.ViewportToScreenPoint(Vector2.zero),
