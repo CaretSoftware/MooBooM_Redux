@@ -24,10 +24,10 @@ public class Mine : MonoBehaviour, IExplosive
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         
-    }
+    //}
 
 
     private void OnCollisionEnter(Collision collision)
@@ -35,6 +35,7 @@ public class Mine : MonoBehaviour, IExplosive
         if (collision.gameObject.CompareTag("Player") && !isExploding)
         {
             isExploding = true;
+            cow.Explosion(transform.position);
             soundController.PlaySound("ExplosionFx");
             AnimateExplosion();
             if (!soundController.GetSound("HurtCow").audioSource.isPlaying)
@@ -49,15 +50,15 @@ public class Mine : MonoBehaviour, IExplosive
         }
     }
 
-    private void HurtCow()
-    {
-        Debug.Log("OUCHIEEE -> Mine");
+    //private void HurtCow()
+    //{
+    //    Debug.Log("OUCHIEEE -> Mine");
 
-        cow.Explosion(transform.position);
-        soundController.PlaySound("HurtCow");
-        gameController.CowTakesDamage();
-        gameController.MineExploded();
-    }
+    //    cow.Explosion(transform.position);
+    //    soundController.PlaySound("HurtCow");
+    //    gameController.CowTakesDamage();
+    //    gameController.MineExploded();
+    //}
 
     public void Exploded()
     {
