@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     {
         gameController = FindObjectOfType<GameController>();
         winScreen = FindObjectOfType<WinScreen>();
-        winScreen.gameObject.SetActive(false);
+        //winScreen.gameObject.SetActive(false);
 		//disableEndOfLevelCanvas(true);
 		//levelSelectCanvas = GameObject.Find("LevelSelectCanvas");
 		//levelSelectCanvas.SetActive(false);
@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
 
     public void EndOfLevel()
     {
-        winScreen.gameObject.SetActive(true);
+        //winScreen.gameObject.SetActive(true);
         winScreen.Display();
         //DisplayRightAmountOfStars();
         

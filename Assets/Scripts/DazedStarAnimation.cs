@@ -32,4 +32,8 @@ public class DazedStarAnimation : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+	private void OnDestroy() {
+		StopAllCoroutines();
+	}
 }

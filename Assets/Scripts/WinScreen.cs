@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class WinScreen : MonoBehaviour {
 	private const int numOfBombCountInRow = 8;
+	[SerializeField] private CanvasGroup exitButton;
+	[SerializeField] private CanvasGroup display;
 	[SerializeField] private Transform canvas;
 	[SerializeField] private GameObject[] stars;
 	[SerializeField] private GameObject starHolder;
@@ -21,14 +23,10 @@ public class WinScreen : MonoBehaviour {
 	private GameController gameController;
 	private UIManager uiManager;
 
-	private void Awake() {
+	private void Start() {
 		gameController = FindObjectOfType<GameController>();
 		uiManager = FindObjectOfType<UIManager>();
 	}
-
-	//private void OnEnable() {
-	//	Display();
-	//}
 
 	public void OpenLevelSelect() {
 		PlayClickSound();
@@ -62,26 +60,63 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	public void Display() {
+		StartCoroutine(FadeInDisplay());
+		//DisplayWithDelay();
+	}
+
+	private IEnumerator FadeInDisplay() {
+		bool survived = false;
+
+		display.interactable = true;
+		display.blocksRaycasts = true;
+		exitButton.interactable = true;
+		exitButton.blocksRaycasts = true;
+
 		if (gameController.GetMineExploded()) {
+			yield return new WaitForSecondsRealtime(1f);
 			DisplayGameOverImage();
 			StartCoroutine(ShowPickedUpBombs(false));
+			//StartCoroutine(ShowPickedUpBombs(false));
 		} else if (gameController.isCowAlreadyHurt()) {
-			Debug.Log("X MINE");
+			yield return new WaitForSecondsRealtime(1f);
 			DisplayGameOverImage(true, true);
 			StartCoroutine(ShowPickedUpBombs(false));
+			//StartCoroutine(ShowPickedUpBombs(false));
 		} else {
+			yield return new WaitForSecondsRealtime(.5f);
 			DisplayStars();
-			StartCoroutine(ShowPickedUpBombs());
+			StartCoroutine(ShowPickedUpBombs(false));
+			survived = true; 
+			//StartCoroutine(ShowPickedUpBombs());
+		}
+
+		float t = 0;
+		while(t < 1f) {
+			t += Time.deltaTime;
+			display.alpha = t;
+			exitButton.alpha = t;
+			yield return null;
+		}
+
+		display.alpha = 1f;
+		exitButton.alpha = 1f;
+
+		yield return new WaitForSecondsRealtime(.5f);
+
+		if (survived) {
+			DisplayWithDelay();
 		}
 	}
 
-	private void DisplayStars() {
-		//int starsEarned = 2;//gameController.getStarsCount(); FIXME?
+	private void DisplayWithDelay() {
+		StartCoroutine(ShowPickedUpBombs());
+	}
 
+	private void DisplayStars() {
 		DisplayGameOverImage(false);
 		DisplayStarHolder(true);
 		for (int i = 0; i < stars.Length; i++) {
-			stars[i].SetActive(true);//i < starsEarned); FIXME?
+			stars[i].SetActive(true);
 		}
 	}
 
@@ -159,10 +194,12 @@ public class WinScreen : MonoBehaviour {
 			x = Ease.EaseOutBack(t);
 			bombCount[bombNum].enabled = true;
 			for (int i = 0; i < puffArray.Length; i++) {
-				puffArray[i].rectTransform.anchoredPosition = Vector2.LerpUnclamped(rect.anchoredPosition, randomUnitCirclePos[i], e);
+				puffArray[i].rectTransform.anchoredPosition =
+						Vector2.LerpUnclamped(rect.anchoredPosition, randomUnitCirclePos[i], e);
 				puffArray[i].color = Color.Lerp(startColor, endColor, e);
 				bombCount[bombNum].color = Color.Lerp(Color.white, endColor, c);
-				bombCount[bombNum].rectTransform.localScale = Vector2.LerpUnclamped(Vector2.zero, Vector2.one * 2f, x);
+				bombCount[bombNum].rectTransform.localScale =
+						Vector2.LerpUnclamped(Vector2.zero, Vector2.one * 2f, x);
 			}
 			t += Time.deltaTime;
 			yield return null;
@@ -201,5 +238,9 @@ public class WinScreen : MonoBehaviour {
 
 	private void PlayClickSound() {
 		SoundController.onlySoundController?.PlaySound("ButtonClick");
+	}
+
+	private void OnDestroy() {
+		StopAllCoroutines();
 	}
 }

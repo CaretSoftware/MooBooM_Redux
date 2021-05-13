@@ -121,7 +121,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106170602006145}
+  m_TargetGraphic: {fileID: 9086106172246587793}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170653806143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106170744527428}
+  m_TargetGraphic: {fileID: 9086106172572756886}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1168,7 +1168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170749483432
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1355,7 +1355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170785313161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1609,7 +1609,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106170817652812}
+  m_TargetGraphic: {fileID: 9086106171762113488}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1642,7 +1642,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170833675282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1831,6 +1831,7 @@ GameObject:
   - component: {fileID: 9086106170860949518}
   - component: {fileID: 9086106170860949516}
   - component: {fileID: 9086106170860949519}
+  - component: {fileID: 1004549954}
   m_Layer: 5
   m_Name: Win Screen
   m_TagString: Untagged
@@ -1902,6 +1903,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &1004549954
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086106170860949513}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &9086106170863443740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2101,7 +2114,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106170866115687}
+  m_TargetGraphic: {fileID: 9086106171753035439}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2471,7 +2484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170919214201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2845,7 +2858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170982403289
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2994,7 +3007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106170990622730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3069,7 +3082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171003529775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3360,7 +3373,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106171058948049}
+  m_TargetGraphic: {fileID: 9086106171190615542}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3393,7 +3406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171073533135
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3937,7 +3950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171143647967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5324,7 +5337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171465476362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5546,7 +5559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171474170147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6054,7 +6067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171539699418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6504,7 +6517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171632863319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6691,7 +6704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171654442520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7081,7 +7094,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106171680360256}
+  m_TargetGraphic: {fileID: 9086106170720604413}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -7367,7 +7380,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106171725034709}
+  m_TargetGraphic: {fileID: 9086106171301873131}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -7822,7 +7835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106171787504565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8167,6 +8180,7 @@ GameObject:
   - component: {fileID: 9086106171825489493}
   - component: {fileID: 9086106171825489492}
   - component: {fileID: 9086106171825489495}
+  - component: {fileID: 114137741}
   m_Layer: 5
   m_Name: Exit Main Menu Button
   m_TagString: Untagged
@@ -8287,6 +8301,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &114137741
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086106171825489489}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &9086106171832520963
 GameObject:
   m_ObjectHideFlags: 0
@@ -9377,7 +9403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172049951020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9452,7 +9478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172053140155
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9912,7 +9938,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106172279235234}
+  m_TargetGraphic: {fileID: 9086106171654583348}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -9945,7 +9971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172313990484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10020,7 +10046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172314027489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10095,7 +10121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172319320260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10453,7 +10479,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 9086106172349168323}
+  m_TargetGraphic: {fileID: 9086106170685934707}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -10598,7 +10624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172443359556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10673,7 +10699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172455891299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11446,7 +11472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9086106172610536109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11709,13 +11735,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6743755a78dd64e92b08fa0cb0b90aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitButton: {fileID: 114137741}
+  display: {fileID: 1004549954}
   canvas: {fileID: 9086106170860949518}
   stars:
   - {fileID: 9086106171556061128}
   - {fileID: 9086106172442344851}
   - {fileID: 9086106171116973759}
   starHolder: {fileID: 9086106170863443740}
-  gameOverImage: {fileID: 9086106172139123161}
+  gameOverDisplay: {fileID: 9086106172139123161}
+  gameOverImage: {fileID: 9086106171921460633}
+  bombSprite: {fileID: 21300000, guid: 381d91459329947b4b3fc2f384090431, type: 3}
   levelSelect: {fileID: 9086106172626364274}
   bombCount:
   - {fileID: 9086106172695904400}
