@@ -102,11 +102,11 @@ public class Cow : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Fence")
 		{
-			if (collision.relativeVelocity.magnitude > 0.5f)
+			if (collision.relativeVelocity.magnitude > 4f)
 			{
-				float volume = (collision.relativeVelocity.magnitude / 5) + 0.5f;
-				/*float volume = collision.relativeVelocity.magnitude * impactToVolumeRatio;
-				volume = Mathf.Clamp(volume, minCollisionVolume, 3f);*/
+				//float volume = (collision.relativeVelocity.magnitude / 5) + 0.7f;
+				float volume = collision.relativeVelocity.magnitude * impactToVolumeRatio;
+				volume = Mathf.Clamp(volume, minCollisionVolume, 3f);
 				if (mooHit && !soundController.GetSound("HurtCow").audioSource.isPlaying)
 				{
 					hittingFenceMoo.audioSource.PlayOneShot(hittingFenceMoo.audioClip, volume);
