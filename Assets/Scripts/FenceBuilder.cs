@@ -10,8 +10,8 @@ public class FenceBuilder : MonoBehaviour {
 	private const float firstContact = 1f / 2.75f;
 
 	private Camera cam;
-	private Vector3 bottomLeftCorner;
-	private Vector3 topRightCorner;
+	private Vector3 bottomLeftCorner = new Vector3(-3.625468f, 0.0f, -6.445278f);
+	private Vector3 topRightCorner = new Vector3(3.625468f, 0.0f, 6.445278f);
 	private float screenHeight;
 	private float screenWidth;
 	private int numFenceSectionsOnHeight = 10;
@@ -37,15 +37,10 @@ public class FenceBuilder : MonoBehaviour {
 		StartCoroutine(SpawnFenceSections());
 	}
 
-	private Vector3 GetPosOfCornerFromCamera(Vector3 ViewPortCoord) {
-		return Vector3.zero;
-	}
-
 	private IEnumerator SpawnFenceSections() {
-
 		soundController.PlaySoundWithDelay("FenceSwoosh", 0.5f);
-		bottomLeftCorner = cam.ViewportToWorldPoint(new Vector3(0f, 0f, 17f));
-		topRightCorner = cam.ViewportToWorldPoint(new Vector3(1f, 1f, 17f));
+		//bottomLeftCorner = cam.ViewportToWorldPoint(new Vector3(0f, 0f, 17f));
+		//topRightCorner = cam.ViewportToWorldPoint(new Vector3(1f, 1f, 17f));
 
 		screenWidth = Mathf.Abs(bottomLeftCorner.x - topRightCorner.x);
 		screenHeight = Mathf.Abs(topRightCorner.z - bottomLeftCorner.z);
@@ -80,7 +75,7 @@ public class FenceBuilder : MonoBehaviour {
 					facingForward,
 					this.gameObject.transform);
 			fencePos += offset;
-			yield return null;
+			yield return new WaitForSecondsRealtime(1f/60f);
 		}
 		offset = new Vector3(sectionLengthXAxis, 0f, 0f);
 		for (int i = 0; i < numFenceSectionsOnHeight; i++) {
@@ -88,7 +83,8 @@ public class FenceBuilder : MonoBehaviour {
 					facingRight,
 					this.gameObject.transform);
 			fencePos += offset;
-			yield return null;
+			yield return new WaitForSecondsRealtime(1f / 60f);
+
 		}
 		offset = new Vector3(0f, 0f, -sectionLengthZAxis);
 		for (int i = 0; i < numFenceSectionsOnWidth; i++) {
@@ -96,7 +92,8 @@ public class FenceBuilder : MonoBehaviour {
 					facingDown,
 					this.gameObject.transform);
 			fencePos += offset;
-			yield return null;
+			yield return new WaitForSecondsRealtime(1f / 60f);
+
 		}
 		offset = new Vector3(-sectionLengthXAxis, 0f, 0f);
 		for (int i = 0; i < numFenceSectionsOnHeight; i++) {
@@ -104,7 +101,7 @@ public class FenceBuilder : MonoBehaviour {
 					facingLeft,
 					this.gameObject.transform);
 			fencePos += offset;
-			yield return null;
+			yield return new WaitForSecondsRealtime(1f / 60f);
 		}
 		for (int i = 0; i < fenceObstacles.Length; i++) {
 			StartCoroutine(DropFence(fenceObstacles[i], i));
@@ -125,12 +122,7 @@ public class FenceBuilder : MonoBehaviour {
 			inv = Mathf.InverseLerp(0f, firstContact, t);
 			fence.transform.localScale = new Vector3(1f, s, 1f);
 			fence.transform.position = Vector3.Lerp(startPos, fenceObstaclePositions[index], inv);
-			yield return null;
+			yield return new WaitForSecondsRealtime(1f / 60f);
 		}
-	}
-
-	private void SpawnWallColliders(Vector3 startPos) {
-
-
 	}
 }
