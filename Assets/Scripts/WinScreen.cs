@@ -89,7 +89,6 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	private IEnumerator ShowPickedUpBombs(bool won = true) {
-		Debug.Log("START");
 		int numTotalBombs = (0+0+3);// gameController.getStartngBombCount(); FIXME
 		int numPickedUpBombs = (0+0+0);// gameController.getPickedUpBombsCount(); FIXME
 
