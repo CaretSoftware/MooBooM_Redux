@@ -19,7 +19,7 @@ public class WinScreen : MonoBehaviour {
 	[SerializeField] private GameObject[] bombCountHolders;
 	[SerializeField] private GameObject[] bombCountRows;
 	[SerializeField] private Image[] puffClouds;
-
+	private bool opened;
 	private GameController gameController;
 	private UIManager uiManager;
 
@@ -60,8 +60,10 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	public void Display() {
-		StartCoroutine(FadeInDisplay());
-		//DisplayWithDelay();
+		if (!opened) {
+			opened = true;
+			StartCoroutine(FadeInDisplay());
+		}
 	}
 
 	private IEnumerator FadeInDisplay() {
