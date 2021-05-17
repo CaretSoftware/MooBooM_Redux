@@ -8,11 +8,12 @@ public class ChocolateMilkPickup : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] MusicController musicController;
     [SerializeField] SoundController soundController;
+    private GameController gameController;
    
     private float timer = 0f;
     private float timeBeforeReset = 3f;
 
-    private bool isSlowMotion;
+    public bool isSlowMotion;
     private bool speedBackPlaying;
 
     private string pickup = "Pickup";
@@ -21,12 +22,13 @@ public class ChocolateMilkPickup : MonoBehaviour
     {
         musicController = FindObjectOfType<MusicController>();
         soundController = FindObjectOfType<SoundController>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer >= timeBeforeReset && isSlowMotion)
+        if (timer >= timeBeforeReset && isSlowMotion && !gameController.isGameOver())
         {
             soundController.PlaySound("SpeedBack");
             Time.timeScale = 1.0f;

@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     private Gyroscope gyroScope;
     private UIManager uiManager;
     private Cow cow;
+    private SoundController soundController;
     private int explodedBombs;
     private int numberOfStars;
     private int startingNumberOfBombs;
@@ -48,12 +49,13 @@ public class GameController : MonoBehaviour
         gyroScope = FindObjectOfType<Gyroscope>();
         musicController = FindObjectOfType<MusicController>();
         cow = FindObjectOfType<Cow>();
+        soundController = FindObjectOfType<SoundController>();
 
         //Change music if slow-motion was activated in previous level
-        if (musicController != null && musicController.musicSource.pitch != 1f)
+        /*if (musicController != null && musicController.musicSource.pitch != 1f)
         {
             musicController.musicSource.pitch = 1f;
-        }
+        }*/
 
         //Finds all bomb-object in the game and adds them to a list
         Bomb[] bombArray = FindObjectsOfType<Bomb>();
@@ -120,6 +122,19 @@ public class GameController : MonoBehaviour
 
     public void GameOver() {
         gameOver = true;
+        
+        if (Time.timeScale != 1)
+        {
+            soundController.PlaySound("SpeedBack");
+            soundController.ResetPitchForAll();
+           Time.timeScale = 1;
+           if (musicController != null && musicController.musicSource.pitch != 1f)
+           {
+                musicController.musicSource.pitch = 1f;
+           }
+        }
+        
+
         //If a mine didn't explode and cow hasn't taken damage and exploded bombs are less than 3
         if (!mineExploded && !cowTakenDamage && explodedBombs < GOAL_NOT_REACHED)
         {
