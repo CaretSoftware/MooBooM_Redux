@@ -50,13 +50,13 @@ public class ChocolateMilkPickup : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) { 
+        if (other.CompareTag("Player") && !isSlowMotion) { 
+            isSlowMotion = true;
             if(musicController != null)
             {
                 musicController.musicSource.pitch = 0.5f;
             }
             soundController.ChangePitchForAll(0.5f);
-            isSlowMotion = true;
             Time.timeScale = 0.2f;
             animator.SetBool(pickup, true);
         }
