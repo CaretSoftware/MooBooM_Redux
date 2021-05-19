@@ -63,16 +63,13 @@ public class BombCountdownCanvas : MonoBehaviour
             if (decimals > delay)
             {
                 float inverseDecimals = Mathf.InverseLerp(1f, delay, decimals);
-                //inverseDecimals = Ease.EaseOutBack(inverseDecimals);
                 if (time < 4)
                 {
                     inverseDecimals = Ease.EaseOutElastic(inverseDecimals);
-                    //fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize + 40, inverseDecimals);
                 }
                 else 
                 {
                     inverseDecimals = Ease.EaseOutBack(inverseDecimals);
-                    //fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals); 
                 }
                
                 if(time >= 10)
