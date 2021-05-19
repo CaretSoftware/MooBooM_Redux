@@ -35,9 +35,21 @@ public class BombCountdownCanvas : MonoBehaviour
 
         float scaleFactor = canvas.scaleFactor;
 
-        Vector2 scaledPosition = new Vector2(
+        Vector2 scaledPosition;
+
+        if (time >= 10)
+        {
+            scaledPosition = new Vector2(
+                    screenPosition.x / scaleFactor - 100,
+                    screenPosition.y / scaleFactor + 5);
+        }
+        else
+        {
+            scaledPosition = new Vector2(
                     screenPosition.x / scaleFactor - 100,
                     screenPosition.y / scaleFactor + 25);
+        }
+        
         if (hasExploded || hasBeenPickedUp)
         {
             textToDisplay = "";
@@ -62,7 +74,15 @@ public class BombCountdownCanvas : MonoBehaviour
                     inverseDecimals = Ease.EaseOutBack(inverseDecimals);
                     //fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals); 
                 }
-                fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals);
+               
+                if(time >= 10)
+                {
+                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize - 57, inverseDecimals);
+                }
+                else
+                {
+                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals);
+                }
             }
 
                 bombText[bomb].fontSize = fontSizeBouncy;
