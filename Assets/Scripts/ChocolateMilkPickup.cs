@@ -50,7 +50,7 @@ public class ChocolateMilkPickup : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isSlowMotion) { 
+        if (other.CompareTag("Player") && !isSlowMotion && !gameController.isGameOver()) { 
             isSlowMotion = true;
             if(musicController != null)
             {
