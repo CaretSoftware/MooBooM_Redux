@@ -11,15 +11,17 @@ public class SoundController : MonoBehaviour
     [SerializeField] private Sound[] sweFarmerSoundClips;
     private Sound[] languageClips;
 
- 
 
     public static SoundController onlySoundController;
     private GameController gameController;
     private MusicController musicController;
 
     private Sound farmerSound;
+
     private bool isInitialized;
+    private bool hasCalledMusicController = false;
     [SerializeField] private bool isNotLevel;
+    private float time = 3f;
 
 
     private void Awake()
@@ -75,6 +77,10 @@ public class SoundController : MonoBehaviour
         {
             PlaySoundWithDelay("BombThrow", 1.5f);
         }
+        if(musicController != null)
+        {
+            musicController.FarmerHasShouted(false);
+        }
     }
 
     private void Update()
@@ -83,8 +89,21 @@ public class SoundController : MonoBehaviour
         {
             farmerSound = languageClips[UnityEngine.Random.Range(0, languageClips.Length)];
             farmerSound.audioSource.PlayDelayed(1f);
-
             isInitialized = true;
+        }
+        else if (isInitialized && musicController != null)
+        {
+            if(time > 0)
+            {
+                print(time);
+                time -= Time.deltaTime;
+            }
+            else if (!hasCalledMusicController)
+            {
+                musicController.FarmerHasShouted(true);
+                hasCalledMusicController = true;
+            }
+      
         }
     }
 
@@ -158,4 +177,5 @@ public class SoundController : MonoBehaviour
             sound.audioSource.pitch = sound.pitch;
         }
     }
+
 }

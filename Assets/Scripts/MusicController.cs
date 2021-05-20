@@ -17,8 +17,12 @@ public class MusicController : MonoBehaviour
     public AudioSource looseSoundSource;
     public AudioClip looseSoundClip;
 
+    public AudioSource looseSoundYehaSource;
+    public AudioClip looseSoundYehaClip;
+
     public static MusicController onlyMusicController;
 
+    private bool hasFarmerShouted = false;
 
 
     private void Awake()
@@ -59,7 +63,19 @@ public class MusicController : MonoBehaviour
 
     public void PlayLooseSound()
     {
-        looseSoundSource.PlayOneShot(looseSoundClip);
+        if (hasFarmerShouted)
+        {
+            looseSoundYehaSource.PlayOneShot(looseSoundYehaClip);
+        }
+        else
+        {
+            looseSoundSource.PlayOneShot(looseSoundClip);
+        }
+        hasFarmerShouted = false;
     }
 
+    public void FarmerHasShouted(bool readyToShout)
+    {
+        hasFarmerShouted = readyToShout;
+    }
 }
