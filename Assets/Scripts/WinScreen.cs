@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class WinScreen : MonoBehaviour {
 	private const int numOfBombCountInRow = 8;
+	private const int maxPossibleStars = 3;
 	[SerializeField] private CanvasGroup exitButton;
 	[SerializeField] private CanvasGroup display;
 	[SerializeField] private Transform canvas;
@@ -22,6 +23,7 @@ public class WinScreen : MonoBehaviour {
 	private bool opened;
 	private GameController gameController;
 	private UIManager uiManager;
+
 
 	private void Start() {
 		gameController = FindObjectOfType<GameController>();
@@ -40,8 +42,8 @@ public class WinScreen : MonoBehaviour {
 
 	public void ReplayLevel() {
 		PlayClickSound();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		//levelSelect.ReplayLevel();
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		levelSelect.ReplayLevel();
 	}
 
 	public void PlayNextLevel() {
@@ -73,23 +75,18 @@ public class WinScreen : MonoBehaviour {
 		display.blocksRaycasts = true;
 		exitButton.interactable = true;
 		exitButton.blocksRaycasts = true;
+		ShowBombCounterPits();
 
 		if (gameController.GetMineExploded()) {
 			yield return new WaitForSecondsRealtime(1f);
 			DisplayGameOverImage();
-			StartCoroutine(ShowPickedUpBombs(false));
-			//StartCoroutine(ShowPickedUpBombs(false));
 		} else if (gameController.isCowAlreadyHurt()) {
 			yield return new WaitForSecondsRealtime(1f);
 			DisplayGameOverImage(true, true);
-			StartCoroutine(ShowPickedUpBombs(false));
-			//StartCoroutine(ShowPickedUpBombs(false));
 		} else {
 			yield return new WaitForSecondsRealtime(.5f);
 			DisplayStars();
-			StartCoroutine(ShowPickedUpBombs(false));
 			survived = true; 
-			//StartCoroutine(ShowPickedUpBombs());
 		}
 
 		float t = 0;
@@ -106,12 +103,8 @@ public class WinScreen : MonoBehaviour {
 		yield return new WaitForSecondsRealtime(.5f);
 
 		if (survived) {
-			DisplayWithDelay();
+			StartCoroutine(ShowPickedUpBombs());
 		}
-	}
-
-	private void DisplayWithDelay() {
-		StartCoroutine(ShowPickedUpBombs());
 	}
 
 	private void DisplayStars() {
@@ -134,9 +127,8 @@ public class WinScreen : MonoBehaviour {
 		starHolder.SetActive(show);
 	}
 
-	private IEnumerator ShowPickedUpBombs(bool won = true) {
+	private void ShowBombCounterPits() {
 		int numTotalBombs = gameController.getStartngBombCount();
-		int numPickedUpBombs = gameController.getPickedUpBombsCount();
 
 		for (int i = 1; i < bombCountRows.Length; i++) {
 			bombCountRows[i].SetActive(numTotalBombs > numOfBombCountInRow * i);
@@ -145,31 +137,69 @@ public class WinScreen : MonoBehaviour {
 		for (int i = 0; i < numTotalBombs; i++) {
 			bombCountHolders[i].SetActive(true);
 		}
+	}
+
+	private IEnumerator ShowPickedUpBombs() {
+		int numTotalBombs = gameController.getStartngBombCount();
+		int numPickedUpBombs = gameController.getPickedUpBombsCount();
+		int numStarsEarned = gameController.getStarsCount();
+		float animationSpeed = 10f;
 
 		yield return new WaitForSecondsRealtime(.5f);
 		float t = 0f;
 		float e;
 		int star = 3;
+		int starPulse = 0;
 
-		if (won) {
-			for (int i = 0; i < numTotalBombs; i++) {
-				bombCount[i].enabled = i < numPickedUpBombs;
-				t += 1f / numTotalBombs;
-				e = Mathf.Lerp(Ease.EaseInQuint(1f - t), Ease.EaseInQuint(t), t) * .25f;
+		//if (won) {
+		int numCycles = Mathf.Max(numTotalBombs, maxPossibleStars);
+		int startStarPulseAt = numTotalBombs - numPickedUpBombs;
+		int startExplosionAt = Mathf.Max(
+				numCycles - Mathf.Max(
+						maxPossibleStars - numStarsEarned,
+						numTotalBombs - numPickedUpBombs));
 
-				if (i >= numPickedUpBombs) {
-					//RectTransform explosionPos = bombCount[i].rectTransform.anchoredPosition;
-					StartCoroutine(AnimateBombCountExplosion(bombCount[i].rectTransform, i));
-					float wait;
-					wait = 1.5f / (numTotalBombs - numPickedUpBombs);
-					if (--star >= 0) {
-						StartCoroutine(AimateStarExplosion(stars[star]));
-					}
-					yield return new WaitForSecondsRealtime(wait);
-				} else {
-					yield return new WaitForSecondsRealtime(e);
-				}
+		for (int i = 0; i < numCycles; i++) {
+			t += (1f / numTotalBombs) * Time.deltaTime * animationSpeed;
+			e = Mathf.Lerp(Ease.EaseInQuint(1f - t), Ease.EaseInQuint(t), t) * .25f;
+
+			bombCount[i].enabled = i < numPickedUpBombs;
+			if (i >= startStarPulseAt && starPulse < stars.Length) {
+				StartCoroutine(AnimateStarPulse(starPulse++));
 			}
+			if (i >= startExplosionAt) {
+				if (i < bombCount.Length) {
+					StartCoroutine(AnimateBombCountExplosion(bombCount[i].rectTransform, i));
+				}
+				//RectTransform explosionPos = bombCount[i].rectTransform.anchoredPosition;
+				float wait;
+				wait = 1.5f / (numTotalBombs - numPickedUpBombs);
+				if (--star >= 0) {
+					StartCoroutine(AimateStarExplosion(stars[star]));
+				}
+				yield return new WaitForSecondsRealtime(wait);
+			} else {
+				yield return new WaitForSecondsRealtime(e);
+			}
+		}
+		//}
+	}
+
+	private IEnumerator AnimateStarPulse(int starNum) {
+		float t = 0f;
+		Vector2 startScale = stars[starNum].transform.localScale;
+		float endScaleFactor = 1.2f;
+		float e = 0f;
+
+		while (t < 1f) {
+			t += Time.deltaTime;
+			e = Mathf.Lerp(Ease.EaseInQuint(1f - t), 0f, t);
+			stars[starNum].transform.localScale =
+					Vector2.Lerp(
+							startScale,
+							startScale * endScaleFactor,
+							e);
+			yield return null;
 		}
 	}
 
