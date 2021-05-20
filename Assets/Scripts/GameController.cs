@@ -52,10 +52,10 @@ public class GameController : MonoBehaviour
         soundController = FindObjectOfType<SoundController>();
 
         //Change music if slow-motion was activated in previous level
-        /*if (musicController != null && musicController.musicSource.pitch != 1f)
+        if (musicController != null)
         {
             musicController.musicSource.pitch = 1f;
-        }*/
+        }
 
         //Finds all bomb-object in the game and adds them to a list
         Bomb[] bombArray = FindObjectsOfType<Bomb>();
@@ -127,8 +127,8 @@ public class GameController : MonoBehaviour
         {
             soundController.PlaySound("SpeedBack");
             soundController.ResetPitchForAll();
-           Time.timeScale = 1;
-           if (musicController != null && musicController.musicSource.pitch != 1f)
+            Time.timeScale = 1;
+           if (musicController != null)
            {
                 musicController.musicSource.pitch = 1f;
            }

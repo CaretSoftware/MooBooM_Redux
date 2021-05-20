@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayComeBackHere : MonoBehaviour {
 	private SoundController soundController;
 
-	private void Start() {
+	/*private void Start() {
 		soundController = FindObjectOfType<SoundController>();
 	}
 
@@ -13,5 +13,5 @@ public class PlayComeBackHere : MonoBehaviour {
 
 	public void FarmerShoutSwe() {
 		soundController.PlaySound("SwedishFarmer");
-	}
+	}*/
 }

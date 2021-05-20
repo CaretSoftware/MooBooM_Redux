@@ -7,14 +7,17 @@ public class SoundController : MonoBehaviour
 {
 
     [SerializeField] private Sound[] soundClips;
+    [SerializeField] private Sound[] engFarmerSoundClips;
+    [SerializeField] private Sound[] sweFarmerSoundClips;
+    private Sound[] languageClips;
 
-
-    //[SerializeField] private List<Sound> soundClips;
+ 
 
     public static SoundController onlySoundController;
     private GameController gameController;
     private MusicController musicController;
 
+    private Sound farmerSound;
     private bool isInitialized;
     [SerializeField] private bool isNotLevel;
 
@@ -42,6 +45,26 @@ public class SoundController : MonoBehaviour
             soundClips[i].audioSource.volume = soundClips[i].volume;
             soundClips[i].audioSource.outputAudioMixerGroup = soundClips[i].audioMixerGroup;
         }
+
+        if(LocalisationSystem.language == LocalisationSystem.Language.English)
+        {
+            languageClips = engFarmerSoundClips;
+        }
+        else
+        {
+            languageClips = sweFarmerSoundClips;
+        }
+
+        for(int i = 0; i < languageClips.Length; i++)
+        {
+            languageClips[i].audioSource = gameObject.AddComponent<AudioSource>();
+
+            languageClips[i].audioSource.clip = languageClips[i].audioClip;
+            languageClips[i].audioSource.pitch = languageClips[i].pitch;
+            languageClips[i].audioSource.volume = languageClips[i].volume;
+            languageClips[i].audioSource.outputAudioMixerGroup = languageClips[i].audioMixerGroup;
+            languageClips[i].audioSource.panStereo = languageClips[i].stereoPan;
+        }
     }
 
     private void Start()
@@ -50,22 +73,17 @@ public class SoundController : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
         if (!isNotLevel)
         {
-            PlaySoundWithDelay("BombThrow", 2f);
+            PlaySoundWithDelay("BombThrow", 1.5f);
         }
     }
 
     private void Update()
     {
-        if(!isNotLevel && gameController.isGameReady() && !isInitialized)
+        if(!isNotLevel && !isInitialized && gameController.isGameReady())
         {
-            if (LocalisationSystem.language == LocalisationSystem.Language.Swedish)
-            {
-                PlaySoundWithDelay("SwedishFarmer", 1f);
-            }
-            else if (LocalisationSystem.language == LocalisationSystem.Language.English)
-            {
-                PlaySoundWithDelay("EnglishFarmer", 1f);
-            }
+            farmerSound = languageClips[UnityEngine.Random.Range(0, languageClips.Length)];
+            farmerSound.audioSource.PlayDelayed(1f);
+
             isInitialized = true;
         }
     }
@@ -123,11 +141,19 @@ public class SoundController : MonoBehaviour
         {
             sound.audioSource.pitch = pitchToSet;
         }
+        foreach(Sound sound in languageClips)
+        {
+            sound.audioSource.pitch = pitchToSet;
+        }
     }
 
     public void ResetPitchForAll()
     {
         foreach(Sound sound in soundClips)
+        {
+            sound.audioSource.pitch = sound.pitch;
+        }
+        foreach(Sound sound in languageClips)
         {
             sound.audioSource.pitch = sound.pitch;
         }

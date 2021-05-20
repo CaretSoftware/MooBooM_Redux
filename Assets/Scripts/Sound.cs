@@ -16,10 +16,11 @@ public class Sound
     [Range(.5f, 5f)]
     public float volume;
 
+    [Range(0f, 2f)]
+    public float stereoPan;
+
     [HideInInspector]
     public AudioSource audioSource;
 
     public AudioMixerGroup audioMixerGroup;
-
-
 }

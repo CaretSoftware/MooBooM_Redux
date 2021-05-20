@@ -49,6 +49,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 1.51
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: ExplosionBuildup
@@ -56,6 +57,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 2.02
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: ExplosionFx
@@ -63,6 +65,7 @@ MonoBehaviour:
     loop: 0
     pitch: 0.8
     volume: 0.68
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: PickupBomb
@@ -70,6 +73,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 2.96
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: BombThrow
@@ -77,6 +81,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 4.04
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: Drink
@@ -84,6 +89,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 2.88
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: FenceSwoosh
@@ -91,6 +97,7 @@ MonoBehaviour:
     loop: 1
     pitch: 1
     volume: 2.88
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: hittingGrass
@@ -98,20 +105,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 5
-    audioSource: {fileID: 0}
-    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
-  - name: EnglishFarmer
-    audioClip: {fileID: 8300000, guid: 7b7734ffca83a694c931694687305e9e, type: 3}
-    loop: 0
-    pitch: 0.95
-    volume: 1.84
-    audioSource: {fileID: 0}
-    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
-  - name: SwedishFarmer
-    audioClip: {fileID: 8300000, guid: 75c9277f822da184db8a07e64e766e97, type: 3}
-    loop: 0
-    pitch: 0.95
-    volume: 1.84
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: ButtonClick
@@ -119,6 +113,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 5
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: ButtonLoadScene
@@ -126,6 +121,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 5
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: CowRoll
@@ -133,6 +129,7 @@ MonoBehaviour:
     loop: 1
     pitch: 1
     volume: 3.72
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: HittingFence
@@ -140,6 +137,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 0.83
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: HittingFenceMoo
@@ -147,6 +145,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 5
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: DrinkChocolate
@@ -154,6 +153,7 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 2.88
+    stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   - name: SpeedBack
@@ -161,6 +161,73 @@ MonoBehaviour:
     loop: 0
     pitch: 1
     volume: 2.88
+    stereoPan: 0
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  engFarmerSoundClips:
+  - name: CantEscapeMe
+    audioClip: {fileID: 8300000, guid: 21a4e2c2547dfaa4e8bc7933abf13fb1, type: 3}
+    loop: 0
+    pitch: 0.95
+    volume: 1.84
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: GettingYou
+    audioClip: {fileID: 8300000, guid: f073be0b63cfc8c438ad886fc58310cd, type: 3}
+    loop: 0
+    pitch: 0.95
+    volume: 1.84
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: BackToFarm
+    audioClip: {fileID: 8300000, guid: 91b4d6b035cac01499fd391fe19b260b, type: 3}
+    loop: 0
+    pitch: 0.95
+    volume: 1.84
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: GetBackHere
+    audioClip: {fileID: 8300000, guid: 4cedd2cb1e7d99c47aa0bb8d641c910e, type: 3}
+    loop: 0
+    pitch: 0.95
+    volume: 1.84
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  sweFarmerSoundClips:
+  - name: KomTillbaka
+    audioClip: {fileID: 8300000, guid: 6f7c60d9bf605b541a3189018d2c1ea1, type: 3}
+    loop: 0
+    pitch: 0.8
+    volume: 1.1
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: TaFast
+    audioClip: {fileID: 8300000, guid: f64093cb74605414cb1c013a8a7f947a, type: 3}
+    loop: 0
+    pitch: 0.7
+    volume: 1.1
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: Farmen
+    audioClip: {fileID: 8300000, guid: e82e82ccda0a1344eb40cfd57aba3c76, type: 3}
+    loop: 0
+    pitch: 0.7
+    volume: 1.1
+    stereoPan: 0.9
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: Kossa
+    audioClip: {fileID: 8300000, guid: b0552196b600ba1499a2735231954e57, type: 3}
+    loop: 0
+    pitch: 0.7
+    volume: 1.1
+    stereoPan: 0.9
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   isNotLevel: 0
