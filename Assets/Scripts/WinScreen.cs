@@ -211,7 +211,7 @@ public class WinScreen : MonoBehaviour {
 			puffArray[i] = Instantiate(puffClouds[Random.Range(0, puffClouds.Length)]);
 			puffArray[i].transform.SetParent(rect.parent, false);
 			puffArray[i].transform.SetAsFirstSibling();
-			randomUnitCirclePos[i] = rect.anchoredPosition + Random.insideUnitCircle * 60f;
+			randomUnitCirclePos[i] = rect.anchoredPosition + Random.insideUnitCircle * 80f;
 		}
 		float t = 0f;
 		float e;
