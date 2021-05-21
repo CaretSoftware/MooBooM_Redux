@@ -57,6 +57,7 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	public void GoToLevel(int level) {
+		Debug.Log("go to level " + level);
 		PlayClickSound();
 		levelSelect.loadLevel(level);
 	}

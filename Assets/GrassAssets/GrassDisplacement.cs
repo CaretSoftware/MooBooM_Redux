@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GrassDisplacement : MonoBehaviour {
@@ -36,21 +34,11 @@ public class GrassDisplacement : MonoBehaviour {
 	}
 
 	private void Trample() {
-		//if (cowGrounded) {
-			relativePos.x = Mathf.InverseLerp(WIDTH, -WIDTH, cow.position.x);
-			relativePos.y = Mathf.InverseLerp(HEIGHT, -HEIGHT, cow.position.z);
+		relativePos.x = Mathf.InverseLerp(WIDTH, -WIDTH, cow.position.x);
+		relativePos.y = Mathf.InverseLerp(HEIGHT, -HEIGHT, cow.position.z);
 
-			offset.x = Mathf.Lerp(0f, 1f, relativePos.x);
-			offset.y = Mathf.Lerp(0f, 1f, relativePos.y);
-			grassMaterial.SetTextureOffset(windTex, offset);
-		//}
+		offset.x = Mathf.Lerp(0f, 1f, relativePos.x);
+		offset.y = Mathf.Lerp(0f, 1f, relativePos.y);
+		grassMaterial.SetTextureOffset(windTex, offset);
 	}
-
-	//private void OnCollisionEnter(Collision collision) {
-	//	cowGrounded = true;
-	//}
-
-	//private void OnCollisionExit(Collision collision) {
-	//	cowGrounded = false;
-	//}
 }
