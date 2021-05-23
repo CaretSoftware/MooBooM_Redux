@@ -144,28 +144,25 @@ public class WinScreen : MonoBehaviour {
 		int numTotalBombs = gameController.getStartingBombCount();
 		int numPickedUpBombs = gameController.getPickedUpBombsCount();
 		int numStarsEarned = gameController.GetStarsCount();
-		float animationSpeed = 10f;
 
 		float t = 0f;
 		float e;
 		int star = 3;
 		int starPulse = 0;
-		float starExplosionWait = .5f;
 
 		int numCycles = Mathf.Max(numTotalBombs, maxPossibleStars);
-		int startStarPulseAt = numTotalBombs - numPickedUpBombs;
-		int startExplosionAt = Mathf.Max(
-				numCycles - Mathf.Max(
+		int startStarPulseAt = Mathf.Clamp(numTotalBombs - maxPossibleStars, 0, int.MaxValue);
+		int startExplosionAt = numCycles - Mathf.Max(
 						maxPossibleStars - numStarsEarned,
-						numTotalBombs - numPickedUpBombs));
+						numTotalBombs - numPickedUpBombs);
 
 		yield return new WaitForSecondsRealtime(.5f);
 
 		for (int i = 0; i < numCycles; i++) {
-			t += (1f / numTotalBombs) * Time.deltaTime * animationSpeed;
-			e = Mathf.Lerp(Ease.EaseInQuint(1f - t), Ease.EaseInQuint(t), t) * .25f;
-
+			t += 1f / numCycles;
+			e = Mathf.Lerp(Ease.EaseInQuint(.95f - t), Ease.EaseInQuint(t), t);
 			bombCount[i].enabled = i < numPickedUpBombs;
+
 			if (gameController.GetStarsCount() == maxPossibleStars
 					&& i >= startStarPulseAt
 					&& starPulse < stars.Length) {
@@ -178,14 +175,13 @@ public class WinScreen : MonoBehaviour {
 				if (--star >= 0) {
 					StartCoroutine(AimateStarExplosion(stars[star]));
 				}
-				yield return new WaitForSecondsRealtime(starExplosionWait);
-			} else {
-				yield return new WaitForSecondsRealtime(e);
 			}
+			yield return new WaitForSecondsRealtime(e);
 		}
 	}
 
 	private IEnumerator AnimateStarPulse(int starNum) {
+		//Debug.Log("star Num " + starNum);
 		float t = 0f;
 		Vector2 startScale = stars[starNum].transform.localScale;
 		float endScaleFactor = 1.2f;
@@ -268,7 +264,7 @@ public class WinScreen : MonoBehaviour {
 		starRect.anchoredPosition = starEndPos;
 	}
 
-	private void PlayClickSound() {
+	public void PlayClickSound() {
 		SoundController.onlySoundController?.PlaySound("ButtonClick");
 	}
 

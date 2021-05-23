@@ -12,7 +12,7 @@ public class LevelSelectButtonAnimator : MonoBehaviour {
 
 	private readonly Vector2 levelSelectOpenPos = new Vector2(222.43f, 275f);
 	private readonly Vector2 levelSelectClosedPos = new Vector2(0f, 4f);
-	private readonly Vector2 levelSelectSizeDeltaOpen = new Vector2(740f, 740f);
+	private readonly Vector2 levelSelectSizeDeltaOpen = new Vector2(780f, 780f);
 	private readonly Vector2 levelSelectSizeDeltaClosed = new Vector2(280f, 280f);
 	private readonly float pixelsPerUnitOpen = 6;
 	private readonly float pixelsPerUnitClosed = 1;
