@@ -206,11 +206,11 @@ public class GameController : MonoBehaviour
         return bombsPickedUp;
     }
 
-    public int getStartngBombCount() {
+    public int getStartingBombCount() {
         return startingNumberOfBombs;
     }
 
-    public int getStarsCount() {
+    public int GetStarsCount() {
         return numberOfStars;
     }
 

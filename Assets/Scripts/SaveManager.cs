@@ -47,7 +47,7 @@ public static class SaveManager{
         }
         
         int levelNumber = levelSelect.getLevelNameAsInt();
-        int starstoAdd = gameController.getStarsCount();
+        int starstoAdd = gameController.GetStarsCount();
 
         //If the level has been played before and the existing starCount is lower than the new one  -> replace
         //This adds them in order

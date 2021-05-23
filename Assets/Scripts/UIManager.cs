@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void DisplayRightAmountOfStars() {
-        int starsEarned = gameController.getStarsCount();
+        int starsEarned = gameController.GetStarsCount();
 
         if (gameController.isLevelWon())
         {

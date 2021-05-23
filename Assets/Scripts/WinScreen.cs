@@ -129,7 +129,7 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	private void ShowBombCounterPits() {
-		int numTotalBombs = gameController.getStartngBombCount();
+		int numTotalBombs = gameController.getStartingBombCount();
 
 		for (int i = 1; i < bombCountRows.Length; i++) {
 			bombCountRows[i].SetActive(numTotalBombs > numOfBombCountInRow * i);
@@ -141,18 +141,17 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	private IEnumerator ShowPickedUpBombs() {
-		int numTotalBombs = gameController.getStartngBombCount();
+		int numTotalBombs = gameController.getStartingBombCount();
 		int numPickedUpBombs = gameController.getPickedUpBombsCount();
-		int numStarsEarned = gameController.getStarsCount();
+		int numStarsEarned = gameController.GetStarsCount();
 		float animationSpeed = 10f;
 
-		yield return new WaitForSecondsRealtime(.5f);
 		float t = 0f;
 		float e;
 		int star = 3;
 		int starPulse = 0;
+		float starExplosionWait = .5f;
 
-		//if (won) {
 		int numCycles = Mathf.Max(numTotalBombs, maxPossibleStars);
 		int startStarPulseAt = numTotalBombs - numPickedUpBombs;
 		int startExplosionAt = Mathf.Max(
@@ -160,30 +159,30 @@ public class WinScreen : MonoBehaviour {
 						maxPossibleStars - numStarsEarned,
 						numTotalBombs - numPickedUpBombs));
 
+		yield return new WaitForSecondsRealtime(.5f);
+
 		for (int i = 0; i < numCycles; i++) {
 			t += (1f / numTotalBombs) * Time.deltaTime * animationSpeed;
 			e = Mathf.Lerp(Ease.EaseInQuint(1f - t), Ease.EaseInQuint(t), t) * .25f;
 
 			bombCount[i].enabled = i < numPickedUpBombs;
-			if (i >= startStarPulseAt && starPulse < stars.Length) {
+			if (gameController.GetStarsCount() == maxPossibleStars
+					&& i >= startStarPulseAt
+					&& starPulse < stars.Length) {
 				StartCoroutine(AnimateStarPulse(starPulse++));
 			}
 			if (i >= startExplosionAt) {
 				if (i < bombCount.Length) {
 					StartCoroutine(AnimateBombCountExplosion(bombCount[i].rectTransform, i));
 				}
-				//RectTransform explosionPos = bombCount[i].rectTransform.anchoredPosition;
-				float wait;
-				wait = 1.5f / (numTotalBombs - numPickedUpBombs);
 				if (--star >= 0) {
 					StartCoroutine(AimateStarExplosion(stars[star]));
 				}
-				yield return new WaitForSecondsRealtime(wait);
+				yield return new WaitForSecondsRealtime(starExplosionWait);
 			} else {
 				yield return new WaitForSecondsRealtime(e);
 			}
 		}
-		//}
 	}
 
 	private IEnumerator AnimateStarPulse(int starNum) {

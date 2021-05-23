@@ -25,7 +25,6 @@ public class LevelSelect : MonoBehaviour
 
 
     public void DisableLockedLevels() {
-        Debug.Log("disable");
         for (int i = 1; i < buttonList.Count; i++)
         {
             bool isLevelOpen = SaveManager.isLevelUnlocked(SaveManager.getChapterNumber(), i);     //True or false if level is unlocked
