@@ -164,6 +164,30 @@ MonoBehaviour:
     stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: MiniExplosion
+    audioClip: {fileID: 8300000, guid: 6255922947a534a06b66b1e28fbdb69a, type: 3}
+    loop: 0
+    pitch: 1
+    volume: 2.88
+    stereoPan: 0
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: StarExplosion
+    audioClip: {fileID: 8300000, guid: eb3b169233bda4c9c9b8d87787013a45, type: 3}
+    loop: 0
+    pitch: 1
+    volume: 2.88
+    stereoPan: 0
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: BombPickupCounter
+    audioClip: {fileID: 8300000, guid: 9aa227ec9960a44b48001e9d146c3b8f, type: 3}
+    loop: 0
+    pitch: 1
+    volume: 2.88
+    stereoPan: 0
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   engFarmerSoundClips:
   - name: CantEscapeMe
     audioClip: {fileID: 8300000, guid: 21a4e2c2547dfaa4e8bc7933abf13fb1, type: 3}

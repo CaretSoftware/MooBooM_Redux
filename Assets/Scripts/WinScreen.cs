@@ -174,7 +174,11 @@ public class WinScreen : MonoBehaviour {
 				}
 				if (--star >= 0) {
 					StartCoroutine(AimateStarExplosion(stars[star]));
+					PlayStarExplosion();
 				}
+				PlayExplosionSound();
+			} else {
+				PlayBombPickupCounter();
 			}
 			yield return new WaitForSecondsRealtime(e);
 		}
@@ -265,7 +269,23 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	public void PlayClickSound() {
-		SoundController.onlySoundController?.PlaySound("ButtonClick");
+		SoundController.onlySoundController.PlaySound("ButtonClick");
+	}
+
+	public void PlayExplosionSound() {
+		SoundController.onlySoundController.PlaySound("MiniExplosion");
+	}
+
+	private void PlayStarExplosion() {
+		SoundController.onlySoundController.PlaySound("StarExplosion");
+	}
+
+	public void PlayPickupSound() {
+		SoundController.onlySoundController.PlaySound("PickupBomb");
+	}
+
+	private void PlayBombPickupCounter() {
+		SoundController.onlySoundController.PlaySound("BombPickupCounter");
 	}
 
 	private void OnDestroy() {
