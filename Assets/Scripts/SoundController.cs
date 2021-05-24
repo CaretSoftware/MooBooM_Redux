@@ -95,7 +95,7 @@ public class SoundController : MonoBehaviour
         {
             if(time > 0)
             {
-                print(time);
+                //print(time);
                 time -= Time.deltaTime;
             }
             else if (!hasCalledMusicController)

@@ -1899,18 +1899,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayComeBackHere, Assembly-CSharp
-        m_MethodName: FarmerShoutEng
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &543909007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2535,6 +2523,7 @@ GameObject:
   - component: {fileID: 604794179}
   - component: {fileID: 604794178}
   - component: {fileID: 604794177}
+  - component: {fileID: 604794180}
   - component: {fileID: 604794176}
   m_Layer: 5
   m_Name: Swedish Button
@@ -2630,18 +2619,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayComeBackHere, Assembly-CSharp
-        m_MethodName: FarmerShoutSwe
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &604794178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,6 +2657,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604794174}
   m_CullTransparentMesh: 1
+--- !u!114 &604794180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604794174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe9235f2b3bd403d84fc2c648c89c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658161121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,10 +3829,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1220889867}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1220889868}
+        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
+        m_MethodName: GoToLevelSelect
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4143,17 +4132,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
---- !u!1 &1220889867 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2807265134227480728, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
-  m_PrefabInstance: {fileID: 1220889866}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1220889868 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2807265134227480729, guid: d76afdbc2454d8b4d8ab25a5cb58febe, type: 3}
   m_PrefabInstance: {fileID: 1220889866}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220889867}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a7b73110d6dd194e891532b1b9300e2, type: 3}

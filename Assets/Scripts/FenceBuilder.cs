@@ -116,7 +116,7 @@ public class FenceBuilder : MonoBehaviour {
 		Vector3 startPos = fence.transform.position;
 		float inv;
 		while (t < 1f) {
-			t += Time.deltaTime;
+			t += Time.deltaTime * 2f;
 			s = t < firstContact ? 1f : Ease.EaseOutBounce(t);
 			
 			inv = Mathf.InverseLerp(0f, firstContact, t);
