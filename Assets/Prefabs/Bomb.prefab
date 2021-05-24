@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1310169dc50ef840a29f2c874909325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeExploding: 10
+  timeBeforeExploding: 15
 --- !u!114 &182466018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 60.444
       objectReference: {fileID: 0}
+    - target: {fileID: 2757052669869778235, guid: fbd50c11447974fa0bb15cb1a284f9d3, type: 3}
+      propertyPath: fuseBurn
+      value: 
+      objectReference: {fileID: 109705858328403862, guid: 1e3abf0866cc74f8e92190579a32f74a, type: 3}
     - target: {fileID: 2757052669869778235, guid: fbd50c11447974fa0bb15cb1a284f9d3, type: 3}
       propertyPath: fuseRoot
       value: 1
