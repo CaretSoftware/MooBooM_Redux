@@ -8,21 +8,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 93b2bd914abe04be0a9caea64abf0f02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1.unity
     guid: ab85ea23788ea49f5865d2a3fed459bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2.unity
     guid: 14b42514fc1d2a846b43488522f73da9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3.unity
     guid: 44ff78c4d24f19d46b5dedbf15afbc16
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4.unity
     guid: b4103dd8574565b43a895e3320750b21
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/5.unity
     guid: 808ab1920ece12149a6a7e8e0ecd4e97
+  - enabled: 1
+    path: Assets/Scenes/New Tutorial/1.unity
+    guid: 0edd3e3db21d74e0ca6506b0e035c5a9
+  - enabled: 1
+    path: Assets/Scenes/New Tutorial/2.unity
+    guid: 47c7e499693fb48548820f8a15bbd236
+  - enabled: 1
+    path: Assets/Scenes/New Tutorial/3.unity
+    guid: 4388ee53cadea4ca8a00b38b8419988f
+  - enabled: 1
+    path: Assets/Scenes/New Tutorial/4.unity
+    guid: 86608a2c529664a91af78f2cfbf9ba81
+  - enabled: 1
+    path: Assets/Scenes/New Tutorial/5.unity
+    guid: 77891d978a4994e46aa6183b5c2b01fe
   - enabled: 1
     path: Assets/Scenes/6.unity
     guid: bf114f6aff18be045bc0ce63bb725af9
