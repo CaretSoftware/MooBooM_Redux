@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class ChapterNode : MonoBehaviour {
 
 	[SerializeField] private int chapterNumber = 1;
-	private Transform cow;
+	private Transform cowTransform;
 	private Rigidbody cowRB;
+	private Cow cowScript;
 	[SerializeField][Range(1f, 50f)] private float attractionForce = 30f;
 	private float distance;
 	private Vector3 direction;
@@ -17,8 +18,9 @@ public class ChapterNode : MonoBehaviour {
 	//private TransitionEffect transition;
 	[SerializeField] private GameObject levelSelect;
 	private bool transitioned;
-
 	private static List<ChapterNode> chapterNodes = new List<ChapterNode>();
+	[SerializeField] private OverWorldTransition overWorldTransition;
+
 
 	private void Awake() {
 		chapterNodes.Add(this);
@@ -26,16 +28,19 @@ public class ChapterNode : MonoBehaviour {
 
 	private void Start() {
 		//transition = FindObjectOfType<TransitionEffect>();
-		cow = FindObjectOfType<Cow>().transform;
-		cowRB = cow.GetComponent<Rigidbody>();
-		if ((transform.position - cow.position).magnitude < .5f) {
+		//overWorldTransition = FindObjectOfType<OverWorldTransition>();
+		cowScript = FindObjectOfType<Cow>();
+		cowTransform = cowScript.transform;
+		cowRB = cowTransform.GetComponent<Rigidbody>();
+		if ((transform.position - cowTransform.position).magnitude < .5f) {
 			cameFromNode = true;
 		}
 		Invoke("ReleaseCow", .5f);
 	}
 
 	private void ReleaseCow() {
-		cow.GetComponent<Cow>().Release();
+
+		cowScript.Release();
 	}
 
 	private void FixedUpdate() {
@@ -44,8 +49,8 @@ public class ChapterNode : MonoBehaviour {
 			return;
 		}
 
-		direction = transform.position - cow.position;
-		distance = (transform.position - cow.position).magnitude;
+		direction = transform.position - cowTransform.position;
+		distance = (transform.position - cowTransform.position).magnitude;
 		direction = direction.normalized;
 
 		if (distance > 1f) {
@@ -69,6 +74,8 @@ public class ChapterNode : MonoBehaviour {
 				cowRB.useGravity = false;
 				//transition.Transition();
 				levelSelect.SetActive(true);
+				overWorldTransition.Animate();
+
 				SaveManager.SetChapterNumber(chapterNumber);
 			}
 		}
@@ -76,7 +83,7 @@ public class ChapterNode : MonoBehaviour {
 
 	private bool CameFromNode() {
 		if (cameFromNode) {
-			if ((transform.position - cow.position).magnitude > 1f) {
+			if ((transform.position - cowTransform.position).magnitude > 1f) {
 				//transitioned = false;
 				cameFromNode = false;
 			}
