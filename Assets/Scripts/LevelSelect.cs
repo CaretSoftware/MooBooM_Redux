@@ -23,7 +23,7 @@ public class LevelSelect : MonoBehaviour
         DisableLockedLevels();
 
         if(SaveManager.CheckIfFileExists()) {
-            DisplayEarnedStarsOnButtons(chapter);// SaveManager.getChapterNumber());
+            DisplayEarnedStarsOnButtons(SaveManager.getChapterNumber());
 		}
     }
 
@@ -31,7 +31,7 @@ public class LevelSelect : MonoBehaviour
     public void DisableLockedLevels() {
         for (int i = 1; i < buttonList.Count; i++)
         {
-            bool isLevelOpen = SaveManager.isLevelUnlocked(chapter /*SaveManager.getChapterNumber()*/, i);     //True or false if level is unlocked
+            bool isLevelOpen = SaveManager.isLevelUnlocked(SaveManager.getChapterNumber(), i);     //True or false if level is unlocked
             buttonList[i].interactable = isLevelOpen;   //the next button sets to true or false if it's unlocked or not
         }
  

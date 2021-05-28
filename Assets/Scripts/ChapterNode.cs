@@ -73,10 +73,10 @@ public class ChapterNode : MonoBehaviour {
 				cowRB.angularDrag = 2f;
 				cowRB.useGravity = false;
 				//transition.Transition();
+				SaveManager.SetChapterNumber(chapterNumber);
 				levelSelect.SetActive(true);
 				overWorldTransition.Animate();
 
-				SaveManager.SetChapterNumber(chapterNumber);
 			}
 		}
 	}
