@@ -1334,38 +1334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: isNotLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.size
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[18].name
-      value: MagicSwirl
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[18].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[12].volume
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[18].volume
-      value: 2.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[18].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7adbd69702fc1fd419c0d01aced4e992, type: 3}
-    - target: {fileID: 6163584926025476201, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
-      propertyPath: soundClips.Array.data[18].audioMixerGroup
-      value: 
-      objectReference: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
     - target: {fileID: 6163584926025476202, guid: 5398021d0463b6147bf04111eb0305de, type: 3}
       propertyPath: m_RootOrder
       value: 3

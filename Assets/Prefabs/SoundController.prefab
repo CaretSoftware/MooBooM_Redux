@@ -188,6 +188,14 @@ MonoBehaviour:
     stereoPan: 0
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
+  - name: MagicSwirl
+    audioClip: {fileID: 8300000, guid: 7adbd69702fc1fd419c0d01aced4e992, type: 3}
+    loop: 0
+    pitch: 1
+    volume: 2.88
+    stereoPan: 0
+    audioSource: {fileID: 0}
+    audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
   engFarmerSoundClips:
   - name: CantEscapeMe
     audioClip: {fileID: 8300000, guid: 21a4e2c2547dfaa4e8bc7933abf13fb1, type: 3}
@@ -254,4 +262,4 @@ MonoBehaviour:
     stereoPan: 0.9
     audioSource: {fileID: 0}
     audioMixerGroup: {fileID: -6629163351292546635, guid: 30dedffa6741cd846b5a8a9eb9eb4945, type: 2}
-  isNotLevel: 0
+  isNotLevel: 1
