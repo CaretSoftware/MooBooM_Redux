@@ -50,7 +50,7 @@ public class ChapterNode : MonoBehaviour {
 		}
 
 		direction = transform.position - cowTransform.position;
-		distance = (transform.position - cowTransform.position).magnitude;
+		distance = direction.magnitude;
 		direction = direction.normalized;
 
 		if (distance > 1f) {
@@ -60,7 +60,7 @@ public class ChapterNode : MonoBehaviour {
 			cameFromNode = false;
 			timer = 0f;
 		}
-		if (distance < 1f) {
+		if (distance < .5f) {
 			cowRB.AddForce(direction * attractionForce);
 			if (distance < .5f) {
 				cowRB.drag = 3f;
