@@ -8,11 +8,13 @@ public class LevelSelect : MonoBehaviour
 {
     private GameController gameController;
     public List<Button> buttonList;
+    TransitionEffect transition;
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        transition = FindObjectOfType<TransitionEffect>();
     }
 
     private void OnEnable()
@@ -47,9 +49,14 @@ public class LevelSelect : MonoBehaviour
         }
     }
 
+    // Calls transitioneffect which in turn calls LoadLevel
     public void loadLevel(int levelToLoad){
-        SceneManager.LoadScene(levelToLoad);
+        transition.Transition(levelToLoad);
     }
+
+    public void LoadLevel(int levelToLoad) {
+        SceneManager.LoadScene(levelToLoad);
+	}
 
     public void ReplayLevel()
     {
