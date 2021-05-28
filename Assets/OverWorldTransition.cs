@@ -11,30 +11,33 @@ public class OverWorldTransition : MonoBehaviour {
 	[SerializeField] private RectTransform buttonText;
 	[SerializeField] private CanvasGroup buttonTextGroup;
 
-	private readonly Vector2 levelSelectOpenPos = new Vector2(222.43f, 275f);
+	private readonly Vector2 levelSelectOpenPos = new Vector2(0f, 0f);
 	private readonly Vector2 levelSelectClosedPos = new Vector2(0f, 4f);
 	private readonly Vector2 levelSelectSizeDeltaOpen = new Vector2(780f, 780f);
 	private readonly Vector2 levelSelectSizeDeltaClosed = new Vector2(280f, 280f);
-	private readonly float pixelsPerUnitOpen = 6;
+	private readonly float pixelsPerUnitOpen = 5;
 	private readonly float pixelsPerUnitClosed = 1;
-	private readonly Vector2 buttonsSizeDeltaOpen = new Vector2(480f, 480f);
+	private readonly Vector2 buttonsSizeDeltaOpen = new Vector2(-10f, -10f);
 	private readonly Vector2 buttonsSizeDeltaClosed = new Vector2(20f, 20f);
-	private readonly Vector2 buttonTextScaleOpen = new Vector2(.5f, .5f);
+	private readonly Vector2 buttonTextScaleOpen = new Vector2(.53f, .53f);
 	private readonly Vector2 buttonTextScaleClosed = new Vector2(.12f, .12f);
 	private readonly float alphaOutTarget = -8f;
-	private bool isOpen;
-
-	private void OnEnable() {
-		Animate();
-	}
+	
+	//private void OnEnable() {
+	//Animate();
+	//}
 
 	public void Animate() {
 		StopAllCoroutines();
-		StartCoroutine(OpenLevelSelect(!isOpen));
+		StartCoroutine(OpenLevelSelect(true));
+	}
+
+	public void AnimateClose() {
+		StopAllCoroutines();
+		StartCoroutine(OpenLevelSelect(false));
 	}
 
 	private IEnumerator OpenLevelSelect(bool open) {
-		isOpen = open;
 		float t = open ? 0f : 1f;
 		float end = open ? 1f : 0f;
 		float e;
