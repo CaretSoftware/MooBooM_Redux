@@ -14,7 +14,8 @@ public class ChapterNode : MonoBehaviour {
 	private float timer;
 	[SerializeField][Range(0f, 1f)] private float timeUntilChapterSelect = .5f;
 	private bool cameFromNode;
-	private TransitionEffect transition;
+	//private TransitionEffect transition;
+	[SerializeField] private GameObject levelSelect;
 	private bool transitioned;
 
 	private static List<ChapterNode> chapterNodes = new List<ChapterNode>();
@@ -24,7 +25,7 @@ public class ChapterNode : MonoBehaviour {
 	}
 
 	private void Start() {
-		transition = FindObjectOfType<TransitionEffect>();
+		//transition = FindObjectOfType<TransitionEffect>();
 		cow = FindObjectOfType<Cow>().transform;
 		cowRB = cow.GetComponent<Rigidbody>();
 		if ((transform.position - cow.position).magnitude < .5f) {
@@ -66,7 +67,8 @@ public class ChapterNode : MonoBehaviour {
 				cowRB.drag = 3f;
 				cowRB.angularDrag = 2f;
 				cowRB.useGravity = false;
-				transition.Transition();
+				//transition.Transition();
+				levelSelect.SetActive(true);
 				SaveManager.SetChapterNumber(chapterNumber);
 			}
 		}
