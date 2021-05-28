@@ -23,6 +23,7 @@ public class TransitionEffect : MonoBehaviour {
 	public void Transition() => StartCoroutine(TransitionOut());
 
 	private IEnumerator TransitionOut() {
+		SoundController.onlySoundController.PlaySound("MagicSwirl");
 		cStartPos = cutOut.rectTransform.position;
 		cStartScale = cutOut.rectTransform.sizeDelta;
 		float t = 0f;
