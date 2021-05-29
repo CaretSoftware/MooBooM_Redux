@@ -93,8 +93,8 @@ public static class SaveManager{
 
     public static bool isLevelUnlocked(int chapter, int currentLevel)
     {
-        Debug.Log("chapter: " + chapter);
-        Debug.Log("Level: " + currentLevel);
+        //Debug.Log("chapter: " + chapter);
+        //Debug.Log("Level: " + currentLevel);
         //Loads the players progress if it hasn't already been loaded
         if (levelStarsofChapters == null)
         {

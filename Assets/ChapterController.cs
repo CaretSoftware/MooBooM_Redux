@@ -8,8 +8,8 @@ public class ChapterController : MonoBehaviour
 
     void Start()
     {
-        //Check if chapter 2 is unlocked
-        if (SaveManager.IsNextChapterUnlocked(SaveManager.getChapterNumber()))
+        //Check if chapter 2 is unlocked. Only have 2 chapters
+        if (SaveManager.IsNextChapterUnlocked(1))
         {
             chapter2.SetActive(false);
         }
