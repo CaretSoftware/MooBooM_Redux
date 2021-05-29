@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Fence
   - ChocolateMilk
+  - Chapter1
+  - Chapter2
   layers:
   - Default
   - TransparentFX
