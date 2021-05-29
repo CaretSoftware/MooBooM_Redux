@@ -72,7 +72,6 @@ public class ChapterNode : MonoBehaviour {
 				cowRB.drag = 3f;
 				cowRB.angularDrag = 2f;
 				cowRB.useGravity = false;
-				//transition.Transition();
 				SaveManager.SetChapterNumber(chapterNumber);
 				levelSelect.SetActive(true);
 				overWorldTransition.Animate();

@@ -68,6 +68,6 @@ public class TransitionEffect : MonoBehaviour {
 	}
 
 	private void CallLevelSelectToTransitionLevel() {
-		levelSelect.LoadLevel(nextLevel);
+		levelSelect.LoadLevel(nextLevel, true);
 	}
 }
