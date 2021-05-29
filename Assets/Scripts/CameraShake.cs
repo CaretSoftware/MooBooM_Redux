@@ -5,11 +5,16 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField] private float timer = 0.0f;
+    Vector3 originalPosition;
+
+    private void Start()
+    {
+        originalPosition = transform.localPosition;
+    }
 
     public IEnumerator Shake(float duration, float strenght) {
-        Vector3 originalPosition = transform.localPosition;
-
-        
+        //If multiple shakes would be triggered at the same time, all the before would stop and only play the last one.
+        StopAllCoroutines();
 
         while (timer < duration)
         {
