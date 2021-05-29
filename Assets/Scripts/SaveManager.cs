@@ -96,6 +96,7 @@ public static class SaveManager{
 
         if (currentLevel > 9)
         {
+            //To get the right index of the array
             currentLevel = currentLevel % 9;
         }
 
