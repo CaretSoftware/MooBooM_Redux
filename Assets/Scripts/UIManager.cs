@@ -41,11 +41,11 @@ public class UIManager : MonoBehaviour
         //DisplayRightAmountOfStars();
         
 
-        //if (!gameController.isLevelWon())
-        //{
-            //DisablePlayNextButton();
+        if (!gameController.isLevelWon())
+        {
+            DisablePlayNextButton();
             //DisplayLoosingCross();
-        //} 
+        } 
 
     }
     
