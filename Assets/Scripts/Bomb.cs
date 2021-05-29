@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour, IExplosive
     private Animator animator;
     private SoundController soundController;
     private Cow cow;
+    private CameraShake cameraShake;
 
     SphereCollider bombRadius;
     private float bombRadiusSize = 2f;
@@ -42,6 +43,7 @@ public class Bomb : MonoBehaviour, IExplosive
         animator = GetComponentInChildren<Animator>();
         soundController = FindObjectOfType<SoundController>();
         cow = FindObjectOfType<Cow>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     private void FixedUpdate()
@@ -124,6 +126,7 @@ public class Bomb : MonoBehaviour, IExplosive
             }
             else if(exploding && !hasBeenPickedUp)
             {
+                StartCoroutine(cameraShake.Shake(0.4f, 1.4f));
                 HurtCow();
             }
         }
