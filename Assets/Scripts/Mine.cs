@@ -37,7 +37,7 @@ public class Mine : MonoBehaviour, IExplosive
         if (collision.gameObject.CompareTag("Player") && !isExploding)
         {
             isExploding = true;
-            StartCoroutine(cameraShake.Shake(0.4f, 1.4f));
+            StartCoroutine(cameraShake.Shake(0.9f, 1.4f));
             cow.Explosion(transform.position);
             soundController.PlaySound("ExplosionFx");
             AnimateExplosion();

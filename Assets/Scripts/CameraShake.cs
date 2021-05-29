@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    [SerializeField] private float timer = 0.0f;
-    Vector3 originalPosition;
+    private float timer = 0.0f;
+    private Vector3 originalPosition;
 
     private void Start()
     {

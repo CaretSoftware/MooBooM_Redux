@@ -126,7 +126,7 @@ public class Bomb : MonoBehaviour, IExplosive
             }
             else if(exploding && !hasBeenPickedUp)
             {
-                StartCoroutine(cameraShake.Shake(0.4f, 1.4f));
+                StartCoroutine(cameraShake.Shake(0.9f, 1.4f));
                 HurtCow();
             }
         }
