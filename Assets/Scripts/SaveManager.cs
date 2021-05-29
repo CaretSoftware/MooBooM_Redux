@@ -14,10 +14,10 @@ public static class SaveManager{
     private static int[][] levelStarsofChapters;     //[chapter][levels]
     private static int[] levelStarsChap1 = new int[9];
     private static int[] levelStarsChap2 = new int[9];
-    private static int[] levelStarsChap3 = new int[9];
-    private static int[] levelStarsChap4 = new int[9];
-    private static int[] levelStarsChap5 = new int[9];
-    private static int[] levelStarsChap6 = new int[9];
+    //private static int[] levelStarsChap3 = new int[9];
+    // static int[] levelStarsChap4 = new int[9];
+    //private static int[] levelStarsChap5 = new int[9];
+    //private static int[] levelStarsChap6 = new int[9];
 
     private static int chapter = 1;
     public static void Initialize() {
@@ -74,13 +74,13 @@ public static class SaveManager{
     }
 
     private static void createANewSaveProgress() {
-        levelStarsofChapters = new int[6][];
+        levelStarsofChapters = new int[2][];
         levelStarsofChapters[0] = levelStarsChap1;
         levelStarsofChapters[1] = levelStarsChap2;
-        levelStarsofChapters[2] = levelStarsChap3;
-        levelStarsofChapters[3] = levelStarsChap4;
-        levelStarsofChapters[4] = levelStarsChap5;
-        levelStarsofChapters[5] = levelStarsChap6;
+        //levelStarsofChapters[2] = levelStarsChap3;
+        //levelStarsofChapters[3] = levelStarsChap4;    //For the future
+        //levelStarsofChapters[4] = levelStarsChap5;
+        //levelStarsofChapters[5] = levelStarsChap6;
     }
 
     public static void SetChapterNumber(int chapterNumber) {
@@ -93,6 +93,8 @@ public static class SaveManager{
 
     public static bool isLevelUnlocked(int chapter, int currentLevel)
     {
+        Debug.Log("chapter: " + chapter);
+        Debug.Log("Level: " + currentLevel);
         //Loads the players progress if it hasn't already been loaded
         if (levelStarsofChapters == null)
         {
