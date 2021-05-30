@@ -52,23 +52,15 @@ public static class SaveManager{
         int starstoAdd = gameController.GetStarsCount();
 
         int levelNumber = levelSelect.getLevelNameAsInt();
-        levelNumber = levelNumber % 9;
+        levelNumber = levelNumber % 9;  //to get the correct array index
         levelNumber = levelNumber == 0 ? 9 : levelNumber;
+
         //If the level has been played before and the existing starCount is lower than the new one  -> replace
         //This adds them in order
         if (levelStarsofChapters[chapter - 1][levelNumber - 1] < starstoAdd)
         {
             levelStarsofChapters[chapter - 1][levelNumber - 1] = starstoAdd;
         }
-
-        
-        //string output = "";
-        //foreach (int x in levelStarsofChapters[chapter - 1])
-        //{
-        //    output = output + (" " + x);
-            
-        //}
-        //Debug.Log("Earened stars on chapter " + chapter + ": " + output);
 
         formatter.Serialize(fileStream, levelStarsofChapters);  //Write data to the file, binary
         fileStream.Close();  

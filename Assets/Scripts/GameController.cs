@@ -110,7 +110,7 @@ public class GameController : MonoBehaviour
     }
 
     public void MineExploded() {
-        //If the player has already won (taken all bombs) they can't 'unwin' after enOfLevelCanvas is displayed
+        //If the player has already won (taken all bombs) they can't 'unwin' after endOfLevelCanvas is displayed
         if (!gameOver)  
         {
             
