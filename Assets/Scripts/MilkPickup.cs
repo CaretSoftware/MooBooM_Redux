@@ -10,7 +10,6 @@ public class MilkPickup : MonoBehaviour {
 	private string player = "Player";
 	private string pickup = "Pickup";
 	private SoundController soundController;
-	//[SerializeField] private string pickupMilkString = "Drink";
 
 	private void Start() {
 		soundController = SoundController.onlySoundController;
@@ -24,7 +23,7 @@ public class MilkPickup : MonoBehaviour {
 			myCollider.enabled = false;
 			Transform cow = other.gameObject.transform;
 			StartCoroutine(Grow(cow, sizeMultiplier));
-			//cow.localScale *= sizeMultiplier;
+
 			cow.transform.position =
 					new Vector3(cow.position.x,
 							groundHeight + cow.localScale.y / 2f,
@@ -48,8 +47,4 @@ public class MilkPickup : MonoBehaviour {
 		}
 		cow.localScale = startSize * sizeMultiplier;
 	}
-
-	/*public void PlayPickupSound() {
-		soundController.PlaySound(pickupMilkString);
-	}*/
 }
