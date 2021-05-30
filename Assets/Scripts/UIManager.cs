@@ -37,14 +37,13 @@ public class UIManager : MonoBehaviour
     public void EndOfLevel()
     {
         //winScreen.gameObject.SetActive(true);
+        //DisplayRightAmountOfStars();  //For the "old" win screen.
+
         winScreen.Display();
-        //DisplayRightAmountOfStars();
-        
 
         if (!gameController.isLevelWon())
         {
             DisablePlayNextButton();
-            //DisplayLoosingCross();
         } 
 
     }
@@ -73,7 +72,7 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    //For the old not juiced win screen, 
+    //For the old "not juiced" win screen, 
     private void DisplayRightAmountOfStars() {
         int starsEarned = gameController.GetStarsCount();
 
