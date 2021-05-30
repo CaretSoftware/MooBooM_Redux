@@ -48,11 +48,12 @@ public static class SaveManager{
         {
             levelStarsofChapters = formatter.Deserialize(fileStream) as int[][];
         }
-        
-        int levelNumber = levelSelect.getLevelNameAsInt();
-        int starstoAdd = gameController.GetStarsCount();
-        //chapter = getChapterNumber();
 
+        int starstoAdd = gameController.GetStarsCount();
+
+        int levelNumber = levelSelect.getLevelNameAsInt();
+        levelNumber = levelNumber % 9;
+        levelNumber = levelNumber == 0 ? 9 : levelNumber;
         //If the level has been played before and the existing starCount is lower than the new one  -> replace
         //This adds them in order
         if (levelStarsofChapters[chapter - 1][levelNumber - 1] < starstoAdd)
@@ -61,13 +62,13 @@ public static class SaveManager{
         }
 
         
-        string output = "";
-        foreach (int x in levelStarsofChapters[chapter - 1])
-        {
-            output = output + (" " + x);
+        //string output = "";
+        //foreach (int x in levelStarsofChapters[chapter - 1])
+        //{
+        //    output = output + (" " + x);
             
-        }
-        Debug.Log("Earened stars on chapter " + chapter + ": " + output);
+        //}
+        //Debug.Log("Earened stars on chapter " + chapter + ": " + output);
 
         formatter.Serialize(fileStream, levelStarsofChapters);  //Write data to the file, binary
         fileStream.Close();  
@@ -98,6 +99,7 @@ public static class SaveManager{
         {
             //To get the right index of the array
             currentLevel = currentLevel % 9;
+            currentLevel = currentLevel == 0 ? 9 : currentLevel;
         }
 
         //Loads the players progress if it hasn't already been loaded
@@ -128,9 +130,9 @@ public static class SaveManager{
         }
         else
         {
-            Debug.LogError("Could not find saved data from " + path);   //error message
+			Debug.LogError("Could not find saved data from " + path);   //error message
 
-            return null;
+			return null;
         }
     }
 

@@ -53,7 +53,7 @@ public class Cow : MonoBehaviour
 
 	public void Explosion(Vector3 otherPos)
 	{
-		Debug.Log("Boom");
+		//Debug.Log("Boom");
 		rb.AddExplosionForce(500f, otherPos, 20f, 1f);
 	}
 

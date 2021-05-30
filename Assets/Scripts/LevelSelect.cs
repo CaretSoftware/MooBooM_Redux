@@ -69,7 +69,8 @@ public class LevelSelect : MonoBehaviour
 
     public void ReplayLevel()
     {
-		SceneManager.LoadScene(getLevelNameAsInt());
+		//SceneManager.LoadScene(getLevelNameAsInt());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 
     public void PlayNextLevel()
@@ -79,7 +80,7 @@ public class LevelSelect : MonoBehaviour
 		if (getLevelNameAsInt() % 9 == 0)
 			GoToLevelSelect();
 		else {
-			Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
+			//Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
 
 			//SceneManager.LoadScene(getLevelNameAsInt() + 1);
