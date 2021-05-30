@@ -23,6 +23,8 @@ public class TransitionEffect : MonoBehaviour {
 	}
 
 	public void Transition(int nextLevel) {
+		Debug.Log("Transition(" + nextLevel + ") called");
+
 		this.nextLevel = nextLevel;
 		StartCoroutine(TransitionOut());
 	}
@@ -68,6 +70,7 @@ public class TransitionEffect : MonoBehaviour {
 	}
 
 	private void CallLevelSelectToTransitionLevel() {
-		levelSelect.LoadLevel(nextLevel, true);
+		Debug.Log("Callback to LoadLevel frpm coroutine end");
+		levelSelect.LoadLevel(nextLevel);
 	}
 }

@@ -10,10 +10,12 @@ public class LevelSelect : MonoBehaviour
     public List<Button> buttonList;
     TransitionEffect transition;
     [SerializeField] private int chapter = 0; // must be default 0 if not overworld chapternode
-
+    private static bool transitioned;
     // Start is called before the first frame update
     void Start()
     {
+        transitioned = false;
+        Debug.Log("start");
         gameController = FindObjectOfType<GameController>();
         transition = FindObjectOfType<TransitionEffect>();
     }
@@ -53,17 +55,17 @@ public class LevelSelect : MonoBehaviour
         }
     }
 
-    public void LoadLevel(int levelToLoad) {
-        LoadLevel(levelToLoad, false);
-    }
+	//public void LoadLevel(int levelToLoad) {
+	//	LoadLevel(levelToLoad, true);
+	//}
 
-    public void LoadLevel(int levelToLoad, bool overworld = false){
-        if (!overworld) {
-            SceneManager.LoadScene(levelToLoad);
-		} else {
-            // Calls transitioneffect which in turn calls LoadLevel
-            // we are in overworld and shouldn't load level until transition
+	public void LoadLevel(int levelToLoad){
+        if (transition != null & !transitioned) {
+            transitioned = true;
             transition.Transition(levelToLoad);
+		} else {
+            transitioned = true;
+            SceneManager.LoadScene(levelToLoad);
 		}
     }
 
