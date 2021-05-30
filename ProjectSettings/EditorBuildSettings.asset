@@ -36,28 +36,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 01/9.unity
     guid: b96e40e9cdeadcc408242f05b1625131
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/1.unity
+    path: Assets/Scenes/Chapter 02/10.unity
     guid: ab85ea23788ea49f5865d2a3fed459bb
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/2.unity
+    path: Assets/Scenes/Chapter 02/11.unity
     guid: 14b42514fc1d2a846b43488522f73da9
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/3.unity
+    path: Assets/Scenes/Chapter 02/12.unity
     guid: b4103dd8574565b43a895e3320750b21
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/5.unity
+    path: Assets/Scenes/Chapter 02/14.unity
     guid: 67f5d3c2e498f4ba890eca1856a108c3
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/4.unity
+    path: Assets/Scenes/Chapter 02/13.unity
     guid: 977f95d5ca6e14ea5856674ea98e9eda
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/6.unity
+    path: Assets/Scenes/Chapter 02/15.unity
     guid: e27308905598f4a39bc1aceffcc8b018
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/7.unity
+    path: Assets/Scenes/Chapter 02/16.unity
     guid: a7bf5abf722024668a50d5351413e154
   - enabled: 1
-    path: Assets/Scenes/Chapter 02/8.unity
+    path: Assets/Scenes/Chapter 02/17.unity
     guid: 89643f0477b31462297da5d410f5f4ea
   - enabled: 1
     path: Assets/Scenes/Overworld Level.unity
