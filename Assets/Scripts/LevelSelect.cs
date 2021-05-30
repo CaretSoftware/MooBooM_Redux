@@ -15,7 +15,6 @@ public class LevelSelect : MonoBehaviour
     void Start()
     {
         transitioned = false;
-        Debug.Log("start");
         gameController = FindObjectOfType<GameController>();
         transition = FindObjectOfType<TransitionEffect>();
     }
