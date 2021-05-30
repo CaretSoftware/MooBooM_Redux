@@ -32,7 +32,6 @@ public class CameraShake : MonoBehaviour
 
             yield return null;  //to run alongside the update method. Before next iteration of loop the update needs to run one time
         }
-        Debug.Log("original position!");
         transform.localPosition = originalPosition;
         transform.localRotation = Quaternion.Euler(originalPosition);
     }
