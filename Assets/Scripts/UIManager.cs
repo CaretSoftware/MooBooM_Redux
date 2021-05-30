@@ -73,6 +73,7 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    //For the old not juiced win screen, 
     private void DisplayRightAmountOfStars() {
         int starsEarned = gameController.GetStarsCount();
 
@@ -84,11 +85,6 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
-    private void DisplayLoosingCross()
-    {
-		winScreen.transform.GetChild(0).Find("LoosingCross").gameObject.SetActive(true);
-	}
 
     private void DisablePlayNextButton() {
             playNextButton.interactable = false;
