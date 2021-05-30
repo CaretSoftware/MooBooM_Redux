@@ -31,14 +31,6 @@ public class Cow : MonoBehaviour
 	private void FixedUpdate()
 	{
 		speed = rb.velocity.magnitude;
-		/*if (speed >= 0.1f && !rollSound.audioSource.isPlaying)
-        {
-			PlayRollSound();
-        }
-		else if(speed < 0.1f && rollSound.audioSource.isPlaying)
-        {
-			rollSound.audioSource.Pause();
-        }*/
 	}
 
 	public void Release()
@@ -53,7 +45,6 @@ public class Cow : MonoBehaviour
 
 	public void Explosion(Vector3 otherPos)
 	{
-		//Debug.Log("Boom");
 		rb.AddExplosionForce(500f, otherPos, 20f, 1f);
 	}
 
@@ -104,7 +95,6 @@ public class Cow : MonoBehaviour
 		{
 			if (collision.relativeVelocity.magnitude > 4f)
 			{
-				//float volume = (collision.relativeVelocity.magnitude / 5) + 0.7f;
 				float volume = collision.relativeVelocity.magnitude * impactToVolumeRatio;
 				volume = Mathf.Clamp(volume, minCollisionVolume, 3f);
 				if (mooHit && !soundController.GetSound("HurtCow").audioSource.isPlaying)
