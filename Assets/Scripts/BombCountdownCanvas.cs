@@ -11,7 +11,6 @@ public class BombCountdownCanvas : MonoBehaviour
     [SerializeField] [Range(0, 300)] private int maxFontSize = 70;
     [SerializeField] [Range(0f, 1f)] private float delay = 0.5f;
 
-    //[SerializeField] private Color textColor;
 
     private Dictionary<Bomb, TextMeshProUGUI> bombText = new Dictionary<Bomb, TextMeshProUGUI>();
 
@@ -49,49 +48,49 @@ public class BombCountdownCanvas : MonoBehaviour
                     screenPosition.x / scaleFactor - 100,
                     screenPosition.y / scaleFactor + 25);
         }
-        
+
         if (hasExploded || hasBeenPickedUp)
         {
             textToDisplay = "";
         }
         else
         {
-           
+
             float decimals = time - (int)time;
             int fontSizeBouncy = 0;
 
             if (decimals > delay)
             {
-                float inverseDecimals = Mathf.InverseLerp(1f, delay, decimals);
+                float animationPercentage = Mathf.InverseLerp(1f, delay, decimals);
                 if (time < 4)
                 {
-                    inverseDecimals = Ease.EaseOutElastic(inverseDecimals);
-                }
-                else 
-                {
-                    inverseDecimals = Ease.EaseOutBack(inverseDecimals);
-                }
-               
-                if(time >= 10)
-                {
-                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize - 57, inverseDecimals);
+                    animationPercentage = Ease.EaseOutElastic(animationPercentage);
                 }
                 else
                 {
-                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, inverseDecimals);
+                    animationPercentage = Ease.EaseOutBack(animationPercentage);
+                }
+
+                if (time >= 10)
+                {
+                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize - 57, animationPercentage);
+                }
+                else
+                {
+                    fontSizeBouncy = (int)Mathf.LerpUnclamped(0, maxFontSize, animationPercentage);
                 }
             }
 
-                bombText[bomb].fontSize = fontSizeBouncy;
+            bombText[bomb].fontSize = fontSizeBouncy;
 
 
             if (time < 1)
             {
                 textToDisplay = "!";
             }
-            else 
-            { 
-                textToDisplay = ((int)time).ToString(); 
+            else
+            {
+                textToDisplay = ((int)time).ToString();
             }
 
         }
