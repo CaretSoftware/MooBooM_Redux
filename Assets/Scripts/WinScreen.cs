@@ -22,11 +22,13 @@ public class WinScreen : MonoBehaviour {
 	[SerializeField] private Image[] puffClouds;
 	private bool opened;
 	private GameController gameController;
+	private MusicController musicController;
 	private UIManager uiManager;
 
 
 	private void Start() {
 		gameController = FindObjectOfType<GameController>();
+		musicController = FindObjectOfType<MusicController>();
 		uiManager = FindObjectOfType<UIManager>();
 	}
 
@@ -51,6 +53,11 @@ public class WinScreen : MonoBehaviour {
 	}
 
 	public void GoToMainMenu() {
+		SoundController.onlySoundController.ResetPitchForAll();
+		if(musicController != null)
+        {
+			musicController.musicSource.pitch = 1f;
+		}
 		PlayClickSound();
 		uiManager.GoMainMenu();
 	}
