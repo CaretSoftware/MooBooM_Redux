@@ -42,7 +42,6 @@ public class WinScreen : MonoBehaviour {
 
 	public void ReplayLevel() {
 		PlayClickSound();
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		levelSelect.ReplayLevel();
 	}
 
@@ -59,7 +58,7 @@ public class WinScreen : MonoBehaviour {
 	public void GoToLevel(int level) {
 		Debug.Log("go to level " + level);
 		PlayClickSound();
-		levelSelect.loadLevel(level);
+		levelSelect.LoadLevel(level);
 	}
 
 	public void Display() {

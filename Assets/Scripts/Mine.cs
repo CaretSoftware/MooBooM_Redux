@@ -9,6 +9,7 @@ public class Mine : MonoBehaviour, IExplosive
     private Animator animator;
     private SoundController soundController;
     private Cow cow;
+    private CameraShake cameraShake;
 
     private string explosion = "explosion";
 
@@ -21,6 +22,7 @@ public class Mine : MonoBehaviour, IExplosive
         animator = GetComponentInChildren<Animator>();
         soundController = FindObjectOfType<SoundController>();
         cow = FindObjectOfType<Cow>();
+        cameraShake = FindObjectOfType<CameraShake>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Mine : MonoBehaviour, IExplosive
         if (collision.gameObject.CompareTag("Player") && !isExploding)
         {
             isExploding = true;
+            StartCoroutine(cameraShake.Shake(0.9f, 1.4f));
             cow.Explosion(transform.position);
             soundController.PlaySound("ExplosionFx");
             AnimateExplosion();

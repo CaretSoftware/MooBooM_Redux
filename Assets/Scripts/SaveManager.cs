@@ -14,7 +14,10 @@ public static class SaveManager{
     private static int[][] levelStarsofChapters;     //[chapter][levels]
     private static int[] levelStarsChap1 = new int[9];
     private static int[] levelStarsChap2 = new int[9];
-    private static int[] levelStarsChap3 = new int[9];
+    //private static int[] levelStarsChap3 = new int[9];
+    //private static int[] levelStarsChap4 = new int[9];
+    //private static int[] levelStarsChap5 = new int[9];
+    //private static int[] levelStarsChap6 = new int[9];
 
     private static int chapter = 1;
     public static void Initialize() {
@@ -48,6 +51,7 @@ public static class SaveManager{
         
         int levelNumber = levelSelect.getLevelNameAsInt();
         int starstoAdd = gameController.GetStarsCount();
+        //chapter = getChapterNumber();
 
         //If the level has been played before and the existing starCount is lower than the new one  -> replace
         //This adds them in order
@@ -70,10 +74,13 @@ public static class SaveManager{
     }
 
     private static void createANewSaveProgress() {
-        levelStarsofChapters = new int[3][];
+        levelStarsofChapters = new int[2][];
         levelStarsofChapters[0] = levelStarsChap1;
         levelStarsofChapters[1] = levelStarsChap2;
-        levelStarsofChapters[2] = levelStarsChap3;
+        //levelStarsofChapters[2] = levelStarsChap3;
+        //levelStarsofChapters[3] = levelStarsChap4;    //For the future
+        //levelStarsofChapters[4] = levelStarsChap5;
+        //levelStarsofChapters[5] = levelStarsChap6;
     }
 
     public static void SetChapterNumber(int chapterNumber) {
@@ -86,6 +93,13 @@ public static class SaveManager{
 
     public static bool isLevelUnlocked(int chapter, int currentLevel)
     {
+
+        if (currentLevel > 9)
+        {
+            //To get the right index of the array
+            currentLevel = currentLevel % 9;
+        }
+
         //Loads the players progress if it hasn't already been loaded
         if (levelStarsofChapters == null)
         {
@@ -131,7 +145,7 @@ public static class SaveManager{
     public static bool IsNextChapterUnlocked(int previousChapter) {
 
         int nextChapter = previousChapter + 1;
-        int starsToUnlockNewChapter = nextChapter * 5;
+        int starsToUnlockNewChapter = nextChapter * 5;  //i.e to unlock chapter 2 you need to have 10 stars in chapter 1
         //Loads the players progress if it hasn't already been loaded
         if (levelStarsofChapters == null)
         {

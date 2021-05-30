@@ -8,21 +8,27 @@ public class TransitionEffect : MonoBehaviour {
 	[SerializeField] private Image cutOut;
 	[SerializeField] private Image background;
 	[SerializeField] private GameObject centerPos;
-	[SerializeField] private GameObject levelSelect;
+	private LevelSelect levelSelect;
 	private Transform cow;
 	private Camera cam;
 	private Vector3 cStartPos;
 	private Vector3 cStartScale;
-	[SerializeField][Range(0f,3f)] private float transitionSpeed = 1f;
+	private int nextLevel = 1;
+	[SerializeField] [Range(0f, 3f)] private float transitionSpeed = 1f;
 
 	private void Awake() {
 		cam = Camera.main;
 		cow = FindObjectOfType<Cow>().transform;
+		levelSelect = FindObjectOfType<LevelSelect>();
 	}
 
-	public void Transition() => StartCoroutine(TransitionOut());
+	public void Transition(int nextLevel) {
+		this.nextLevel = nextLevel;
+		StartCoroutine(TransitionOut());
+	}
 
 	private IEnumerator TransitionOut() {
+		SoundController.onlySoundController.PlaySound("MagicSwirl");
 		cStartPos = cutOut.rectTransform.position;
 		cStartScale = cutOut.rectTransform.sizeDelta;
 		float t = 0f;
@@ -40,8 +46,9 @@ public class TransitionEffect : MonoBehaviour {
 		cutOut.rectTransform.sizeDelta = Vector2.zero;
 
 		yield return new WaitForSeconds(.2f);
-		levelSelect.SetActive(true);
-		StartCoroutine(TransitionIn());
+		//levelSelect.SetActive(true);
+		CallLevelSelectToTransitionLevel();
+		//StartCoroutine(TransitionIn());
 	}
 
 	private IEnumerator TransitionIn() {
@@ -58,5 +65,9 @@ public class TransitionEffect : MonoBehaviour {
 			yield return null;
 		}
 		//cutOut.rectTransform.sizeDelta = Vector2.zero;
+	}
+
+	private void CallLevelSelectToTransitionLevel() {
+		levelSelect.LoadLevel(nextLevel, true);
 	}
 }

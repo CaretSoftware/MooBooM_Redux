@@ -32,6 +32,7 @@ public class SettingGyroButton : MonoBehaviour {
 	private void TouchOn(bool touchOn) {
 		touchText.SetActive(!touchOn);
 		gyroText.SetActive(touchOn);
+
 	}
 
 	private bool HasGyroSupport() => SystemInfo.supportsGyroscope;

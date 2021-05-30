@@ -8,26 +8,32 @@ public class LevelSelect : MonoBehaviour
 {
     private GameController gameController;
     public List<Button> buttonList;
+    TransitionEffect transition;
+    [SerializeField] private int chapter = 0; // must be default 0 if not overworld chapternode
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        transition = FindObjectOfType<TransitionEffect>();
     }
 
     private void OnEnable()
     {
         DisableLockedLevels();
 
-        if(SaveManager.CheckIfFileExists())
-            DisplayEarnedStarsOnButtons(SaveManager.getChapterNumber());
+        if(chapter != 0 || SaveManager.CheckIfFileExists()) {
+            int chpt = chapter != 0 ? chapter : SaveManager.getChapterNumber();
+            DisplayEarnedStarsOnButtons(chpt);
+		}
     }
 
 
     public void DisableLockedLevels() {
         for (int i = 1; i < buttonList.Count; i++)
         {
-            bool isLevelOpen = SaveManager.isLevelUnlocked(SaveManager.getChapterNumber(), i);     //True or false if level is unlocked
+            int chpt = chapter != 0 ? chapter : SaveManager.getChapterNumber();
+            bool isLevelOpen = SaveManager.isLevelUnlocked(chpt, i);     //True or false if level is unlocked
             buttonList[i].interactable = isLevelOpen;   //the next button sets to true or false if it's unlocked or not
         }
  
@@ -47,24 +53,38 @@ public class LevelSelect : MonoBehaviour
         }
     }
 
-    public void loadLevel(int levelToLoad){
-        SceneManager.LoadScene(levelToLoad);
+    public void LoadLevel(int levelToLoad) {
+        LoadLevel(levelToLoad, false);
+    }
+
+    public void LoadLevel(int levelToLoad, bool overworld = false){
+        if (!overworld) {
+            SceneManager.LoadScene(levelToLoad);
+		} else {
+            // Calls transitioneffect which in turn calls LoadLevel
+            // we are in overworld and shouldn't load level until transition
+            transition.Transition(levelToLoad);
+		}
     }
 
     public void ReplayLevel()
     {
-        SceneManager.LoadScene(getLevelNameAsInt());
-    }
+		SceneManager.LoadScene(getLevelNameAsInt());
+	}
 
     public void PlayNextLevel()
     {
-        //If the player is on level 9 or 18 etc.. next level button will take the player to 
-        //the overwolrd (to select a new chapter)
-        if (getLevelNameAsInt() % 9 == 0)
-            GoToLevelSelect();
-        else
-            SceneManager.LoadScene(getLevelNameAsInt() + 1);
-    }
+		//If the player is on level 9 or 18 etc.. next level button will take the player to 
+		//the overwolrd (to select a new chapter)
+		if (getLevelNameAsInt() % 9 == 0)
+			GoToLevelSelect();
+		else {
+			Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+
+			//SceneManager.LoadScene(getLevelNameAsInt() + 1);
+		}
+	}
 
     public void GoToLevelSelect() {
         SceneManager.LoadScene("Overworld Level");
