@@ -16,8 +16,8 @@ public class Cow : MonoBehaviour
 	float nominalSpeed = 1f;
 	float speed;
 
-	private float minCollisionVolume = 0.3f;
-	private float impactToVolumeRatio = 0.2f;
+	private float minCollisionVolume = 0.1f;
+	private float impactToVolumeRatio = 0.4f;
 
 	private void Start()
 	{
@@ -93,7 +93,7 @@ public class Cow : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Fence")
 		{
-			if (collision.relativeVelocity.magnitude > 4f)
+			if (collision.relativeVelocity.magnitude > 1.2f)
 			{
 				float volume = collision.relativeVelocity.magnitude * impactToVolumeRatio;
 				volume = Mathf.Clamp(volume, minCollisionVolume, 3f);
