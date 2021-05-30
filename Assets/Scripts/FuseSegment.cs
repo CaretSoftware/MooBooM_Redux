@@ -15,7 +15,7 @@ public class FuseSegment : MonoBehaviour {
 
 	public void SpawnFuseSegment(int numSegmentsLeft) {
 		instance = this.gameObject;
-		Debug.Log(numSegmentsLeft);
+		//Debug.Log(numSegmentsLeft);
 		if (numSegmentsLeft >= 0) {
 			FuseSegment next =
 					Instantiate(

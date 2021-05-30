@@ -173,7 +173,7 @@ public class GameController : MonoBehaviour
         }
 
         uiManager.EndOfLevel();
-        Debug.Log("GAME OVER! -  " + numberOfStars + " *! \nWon?: " + wonLevel);
+        //Debug.Log("GAME OVER! -  " + numberOfStars + " *! \nWon?: " + wonLevel);
         SaveProgress();
     }
 
