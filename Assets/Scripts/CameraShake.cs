@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    private float timer = 0.0f;
+    [SerializeField] private float timer = 0.0f;
     private Vector3 originalPosition = Vector3.zero;
 
     //private void Start()
@@ -12,9 +12,14 @@ public class CameraShake : MonoBehaviour
     //    originalPosition = transform.localPosition;
     //}
 
-    public IEnumerator Shake(float duration, float strenght) {
+    public void StartShake() {
         //If multiple shakes would be triggered at the same time, all the before would stop and only play the last one.
         StopAllCoroutines();
+        StartCoroutine(Shake(0.9f, 0.9f));
+    }
+
+    public IEnumerator Shake(float duration, float strenght) {
+        
 
         while (timer < duration)
         {
@@ -27,7 +32,7 @@ public class CameraShake : MonoBehaviour
 
             yield return null;  //to run alongside the update method. Before next iteration of loop the update needs to run one time
         }
-        //Debug.Log("original position!");
+        Debug.Log("original position!");
         transform.localPosition = originalPosition;
         transform.localRotation = Quaternion.Euler(originalPosition);
     }
