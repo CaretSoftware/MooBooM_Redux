@@ -25,13 +25,6 @@ public class Mine : MonoBehaviour, IExplosive
         cameraShake = FindObjectOfType<CameraShake>();
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && !isExploding)
@@ -53,16 +46,6 @@ public class Mine : MonoBehaviour, IExplosive
         }
     }
 
-    //private void HurtCow()
-    //{
-    //    Debug.Log("OUCHIEEE -> Mine");
-
-    //    cow.Explosion(transform.position);
-    //    soundController.PlaySound("HurtCow");
-    //    gameController.CowTakesDamage();
-    //    gameController.MineExploded();
-    //}
-
     public void Exploded()
     {
         gameController.MineExploded();
@@ -70,7 +53,7 @@ public class Mine : MonoBehaviour, IExplosive
 
     public void PickMeUp()
     {
-        //Kan implementeras senare som ny funktion
+        //Inherited from IExplosive
     }
 
     public void DestroyMe()
