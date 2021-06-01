@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BoundCameraFrustrumWithRotation : MonoBehaviour {
-	[SerializeField] [Range(0f, .5f)] private float perspectiveTwistFactor = .25f;
-	[SerializeField] [Range(0f, 15f)] private float viewClampDegrees;
+	private float perspectiveTwistFactor = .5f;
+	private float viewClampDegrees = 15;
 	[SerializeField] private Transform cameraHolder = null;
 	private Camera cam;
 
