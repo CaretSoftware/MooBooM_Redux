@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b35ee8c93ade46d3966732361155b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspectiveTwistFactor: 0.25
-  viewClampDegrees: 1
+  perspectiveTwistFactor: 0.5
+  viewClampDegrees: 15
   cameraHolder: {fileID: 733639709236173021}
 --- !u!1 &4980846760269693444
 GameObject:

@@ -29,6 +29,7 @@ public class Gyroscope : MonoBehaviour {
     private Vector2 calibrationOffset;
     private float smallAngle = 5f;
     private float fadeOutControlls = 0;
+    private Vector3 previousGravity;
 
     // Canvas
     [SerializeField] private TextMeshProUGUI debugText;
@@ -39,8 +40,10 @@ public class Gyroscope : MonoBehaviour {
     private Color UiDefaultColor;
     private Vector2 centerPosCanvas;
     private Vector2 scale;
-    //[SerializeField] bool imageOn = false;
     [SerializeField] private Color clear = Color.white;
+    [SerializeField] private Image touchControlsRadius = null;
+    [SerializeField] private Image touchControlsCenter = null;
+
     private GameController gameController; //isGameWon
 
     private void Awake() {
@@ -136,15 +139,18 @@ public class Gyroscope : MonoBehaviour {
         } else if (isGyroEnabled && isGyroSettingsOn) {
             OrientToGravity();
         }
+        previousGravity = Physics.gravity;
     }
 
     private void LevelOutGravity() {
         Vector3 gravity = Vector3.Lerp(
-                    gravityForce,//gyroOffset * Input.gyro.gravity,
-                    Vector2.down * 20,
+                    previousGravity,
+                    Vector2.down * 20f,
                     fadeOutControlls);
+
         fadeOutControlls += Time.deltaTime;
 
+        Debug.Log(fadeOutControlls);
         Physics.gravity = gravity;
     }
 
