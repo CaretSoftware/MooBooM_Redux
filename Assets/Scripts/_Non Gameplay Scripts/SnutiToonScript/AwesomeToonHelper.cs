@@ -32,7 +32,7 @@ namespace AwesomeToon {
         [SerializeField] int maxLights = 6;
 
         [Header("Recieve Shadow Check")]
-        [SerializeField] bool raycast = true;
+        bool raycast = false;
         [SerializeField] LayerMask raycastMask = new LayerMask();
         [SerializeField] float raycastFadeSpeed = 10f;
 

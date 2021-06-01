@@ -29,7 +29,7 @@ public class Gyroscope : MonoBehaviour {
     private Vector2 calibrationOffset;
     private float smallAngle = 5f;
     private float fadeOutControlls = 0;
-    private Vector3 previousGravity;
+    private Vector3 previousGravity = Vector3.down * 20;
 
     // Canvas
     [SerializeField] private TextMeshProUGUI debugText;
@@ -89,19 +89,15 @@ public class Gyroscope : MonoBehaviour {
 
     private IEnumerator Calibrate() {
 
-        //calibrated = offsetPos.magnitude < smallAngle;
         images.SetActive(true);
-        bool centered = false;
+        bool centered;
         float t = fadeOutTime;
-        float e = t;
-        float inv = t;
-        Color currUiColor = UiDefaultColor;
+        float inv;
+
         while (!calibrated) {
             SetDeviceRotation();
 
             centered = calibrationOffset.magnitude < smallAngle;
-
-            //Debug.Log(calibrationOffset.magnitude);
 
             if (centered) {
                 t -= Time.deltaTime;
@@ -129,13 +125,20 @@ public class Gyroscope : MonoBehaviour {
     private void Update() {
         if (gameController != null && gameController.isGameOver()) {
             LevelOutGravity();
+            TouchControlsVisuals(false);
             return;
 		}
         if (Input.GetMouseButtonDown(0)) {
             mouseStartPos = ScreenPointToWorldPosition(touchHeight);
+            TouchControlsVisuals(true, Input.mousePosition);
+
+        } else if (Input.GetMouseButtonUp(0)) {
+            TouchControlsVisuals(false);
         }
         if (Input.GetMouseButton(0)) {
             TouchControllGravity();
+            TouchControlsVisuals(Input.mousePosition);
+
         } else if (isGyroEnabled && isGyroSettingsOn) {
             OrientToGravity();
         }
@@ -150,8 +153,20 @@ public class Gyroscope : MonoBehaviour {
 
         fadeOutControlls += Time.deltaTime;
 
-        Debug.Log(fadeOutControlls);
         Physics.gravity = gravity;
+    }
+
+    private void TouchControlsVisuals(bool enabled, Vector3? mousePos = null) {
+        touchControlsCenter.enabled = enabled;
+        touchControlsRadius.enabled = enabled;
+        if (mousePos != null) {
+            touchControlsRadius.rectTransform.position = (Vector3)mousePos;
+            touchControlsCenter.rectTransform.position = (Vector3)mousePos;
+        }
+    }
+
+    private void TouchControlsVisuals(Vector3 mousePos) {
+        touchControlsCenter.rectTransform.position = mousePos;
     }
 
     private void TouchControllGravity() {

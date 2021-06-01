@@ -10,12 +10,11 @@ public class MilkPickup : MonoBehaviour {
 	private string player = "Player";
 	private string pickup = "Pickup";
 	private SoundController soundController;
+	private float drag = 5;
 
 	private void Start() {
 		soundController = SoundController.onlySoundController;
 	}
-
-
 
 	private void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag.Equals(player)) {
@@ -28,7 +27,7 @@ public class MilkPickup : MonoBehaviour {
 					new Vector3(cow.position.x,
 							groundHeight + cow.localScale.y / 2f,
 							cow.position.z);
-			cow.GetComponent<Rigidbody>().drag = sizeMultiplier * 4f;
+			cow.GetComponent<Rigidbody>().drag = drag;
 			transform.LookAt(other.transform);
 			animator.SetBool(pickup, true);
 		}

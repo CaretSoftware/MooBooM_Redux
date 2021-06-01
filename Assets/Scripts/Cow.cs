@@ -109,7 +109,5 @@ public class Cow : MonoBehaviour
 				}
 			}
 		}
-
-
 	}
 }
