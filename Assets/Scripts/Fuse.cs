@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +23,7 @@ public class Fuse : MonoBehaviour {
 		scale = transform.localScale;
 		bomb = GetComponentInParent<Bomb>();
 		fuseLength = bomb.GetTimeBeforeExploding();
+
 		if (fuseRoot) {
 			InstantiateFuseSegments();
 		}

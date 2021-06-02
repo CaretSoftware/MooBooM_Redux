@@ -9,7 +9,7 @@ public class FenceBuilder : MonoBehaviour {
 	private const float fenceSectionLength = 0.8f;
 	private const float firstContact = 1f / 2.75f;
 
-	private Camera cam;
+	//private Camera cam;
 	private Vector3 bottomLeftCorner = new Vector3(-3.625468f, 0.0f, -6.445278f);
 	private Vector3 topRightCorner = new Vector3(3.625468f, 0.0f, 6.445278f);
 	private float screenHeight;
@@ -26,7 +26,7 @@ public class FenceBuilder : MonoBehaviour {
 	private Vector3[] fenceObstaclePositions;
 
 	private void Start() {
-		cam = FindObjectOfType<Camera>();
+		//cam = FindObjectOfType<Camera>();
 		soundController = FindObjectOfType<SoundController>();
 		fenceObstacles = FindObjectsOfType<FenceObstacle>();
 		fenceObstaclePositions = new Vector3[fenceObstacles.Length];
@@ -77,6 +77,7 @@ public class FenceBuilder : MonoBehaviour {
 			fencePos += offset;
 			yield return new WaitForSecondsRealtime(1f/60f);
 		}
+
 		offset = new Vector3(sectionLengthXAxis, 0f, 0f);
 		for (int i = 0; i < numFenceSectionsOnHeight; i++) {
 			Instantiate(fence, fencePos,
@@ -86,6 +87,7 @@ public class FenceBuilder : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(1f / 60f);
 
 		}
+
 		offset = new Vector3(0f, 0f, -sectionLengthZAxis);
 		for (int i = 0; i < numFenceSectionsOnWidth; i++) {
 			Instantiate(fence, fencePos,
@@ -95,6 +97,7 @@ public class FenceBuilder : MonoBehaviour {
 			yield return new WaitForSecondsRealtime(1f / 60f);
 
 		}
+
 		offset = new Vector3(-sectionLengthXAxis, 0f, 0f);
 		for (int i = 0; i < numFenceSectionsOnHeight; i++) {
 			Instantiate(fence, fencePos,
@@ -103,6 +106,7 @@ public class FenceBuilder : MonoBehaviour {
 			fencePos += offset;
 			yield return new WaitForSecondsRealtime(1f / 60f);
 		}
+
 		for (int i = 0; i < fenceObstacles.Length; i++) {
 			StartCoroutine(DropFence(fenceObstacles[i], i));
 		}

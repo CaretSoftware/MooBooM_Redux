@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoundCameraFrustrumWithRotation : MonoBehaviour {
@@ -22,13 +20,6 @@ public class BoundCameraFrustrumWithRotation : MonoBehaviour {
 		TurnCamera();
 	}
 
-	private void TurnCamera() {
-		cam.lensShift =
-				new Vector2(
-						-cameraHolder.transform.position.x / 3.5f * .5f,     // magical numbers! Don't touch!
-						-cameraHolder.transform.position.z / 3.5f * .275f);  // magical numbers! Don't touch!
-	}
-
 	private void SetCameraPosition() {
 		Vector3 gravityDir = -Physics.gravity * perspectiveTwistFactor;
 		//gravityDir.z = gravityDir.y;
@@ -36,5 +27,12 @@ public class BoundCameraFrustrumWithRotation : MonoBehaviour {
 		gravityDir = Vector3.ClampMagnitude(gravityDir, viewClampDegrees);
 		gravityDir.y = 17f;
 		cameraHolder.transform.position = gravityDir;
+	}
+
+	private void TurnCamera() {
+		cam.lensShift =
+				new Vector2(
+						-cameraHolder.transform.position.x / 3.5f * .5f,     // magical numbers! Don't touch!
+						-cameraHolder.transform.position.z / 3.5f * .275f);  // magical numbers! Don't touch!
 	}
 }

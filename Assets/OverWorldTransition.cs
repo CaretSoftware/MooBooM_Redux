@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +22,6 @@ public class OverWorldTransition : MonoBehaviour {
 	private readonly Vector2 buttonTextScaleClosed = new Vector2(.12f, .12f);
 	private readonly float alphaOutTarget = -8f;
 	
-	//private void OnEnable() {
-	//Animate();
-	//}
-
 	public void Animate() {
 		StopAllCoroutines();
 		StartCoroutine(OpenLevelSelect(true));
@@ -73,5 +68,3 @@ public class OverWorldTransition : MonoBehaviour {
 		StopAllCoroutines();
 	}
 }
-
-

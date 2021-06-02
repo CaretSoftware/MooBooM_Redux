@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,7 +46,6 @@ public class TransitionEffect : MonoBehaviour {
 		cutOut.rectTransform.sizeDelta = Vector2.zero;
 
 		yield return new WaitForSeconds(.2f);
-		//levelSelect.SetActive(true);
 		CallLevelSelectToTransitionLevel();
 		//StartCoroutine(TransitionIn());
 	}

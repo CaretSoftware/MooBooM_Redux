@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WinScreen : MonoBehaviour {
@@ -24,7 +22,6 @@ public class WinScreen : MonoBehaviour {
 	private GameController gameController;
 	private MusicController musicController;
 	private UIManager uiManager;
-
 
 	private void Start() {
 		gameController = FindObjectOfType<GameController>();

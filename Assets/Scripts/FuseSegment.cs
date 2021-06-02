@@ -1,17 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FuseSegment : MonoBehaviour {
 
 	[SerializeField] private GameObject fuseSegmentPrefab;
 	private GameObject instance;
-
-	// ScriptA's method which spawns instances of prefab B
-	// GameObject bInstance = Instantiate(prefabB);
-	// ScriptB scriptOnBInstance = bInstance.GetComponent<ScriptB>();
-
-	// scriptOnBInstance.referenceToAGameObject = this.gameObject;
 
 	public void SpawnFuseSegment(int numSegmentsLeft) {
 		instance = this.gameObject;

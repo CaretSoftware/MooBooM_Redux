@@ -1,35 +1,36 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Gyroscope : MonoBehaviour {
 
+    private Camera cam;
     [SerializeField] private Vector3 mouseStartPos = Vector3.zero;
     [SerializeField] private Vector3 gravityForce = Vector3.down * 20f;
     [SerializeField] private float gravityFactor = 9f;
     [SerializeField] private float touchHeight = 0f;
-    [SerializeField] [Range(0f, 20f)] private float gyroscopeSensitivity = 10f;
     [SerializeField] private float fadeOutTime = 2f;
-    private Camera cam;
+    [SerializeField] [Range(0f, 20f)] private float gyroscopeSensitivity = 10f;
 
     // Gyro
     private UnityEngine.Gyroscope gyro;
+    private readonly float smallAngle = 5f;
+    private readonly float calibrationSpeed = 2f;
+    private readonly float lateralRatio = 200f;
     private readonly Quaternion xAxisOnly = new Quaternion(0, 1, 0, 0);
     private Quaternion gyroOffset;
     private Quaternion prevAngle;
     private Quaternion currAngle;
-    private Vector3 phoneGravity;
     private bool isGyroEnabled;
     private bool calibrating;
     private bool isGyroSettingsOn = true;
     private bool calibrated;
     private Vector2 calibrationOffset;
-    private float smallAngle = 5f;
-    private float fadeOutControlls = 0;
+    private Vector3 phoneGravity;
     private Vector3 previousGravity = Vector3.down * 20;
+    private float fadeOutControlls = 0;
+    private float gravity = 20f;
 
     // Canvas
     [SerializeField] private TextMeshProUGUI debugText;
@@ -37,18 +38,17 @@ public class Gyroscope : MonoBehaviour {
     [SerializeField] private Image image2 = null;
     [SerializeField] private Image centerPosImage = null;
     [SerializeField] private GameObject images = null;
+    [SerializeField] private Image touchControlsRadius = null;
+    [SerializeField] private Image touchControlsCenter = null;
+    [SerializeField] private Color clear = Color.white;
     private Color UiDefaultColor;
     private Vector2 centerPosCanvas;
     private Vector2 scale;
-    [SerializeField] private Color clear = Color.white;
-    [SerializeField] private Image touchControlsRadius = null;
-    [SerializeField] private Image touchControlsCenter = null;
 
     private GameController gameController; //isGameWon
 
     private void Awake() {
         cam = Camera.main;
-        
     }
 
     private void Start() {
@@ -174,7 +174,7 @@ public class Gyroscope : MonoBehaviour {
                     (ScreenPointToWorldPosition(touchHeight) - mouseStartPos)
                     * gravityFactor
                     * gravityFactor;
-        gravityForce += Vector3.down * 20f;
+        gravityForce += Vector3.down * gravity;
         Physics.gravity = gravityForce;
     }
 
@@ -191,7 +191,7 @@ public class Gyroscope : MonoBehaviour {
         phoneGravity = ReadGyroscope();
         phoneGravity.x *= gyroscopeSensitivity;
         phoneGravity.z = phoneGravity.y * gyroscopeSensitivity;
-        phoneGravity.y = -20f;
+        phoneGravity.y = -gravity;
         Physics.gravity = phoneGravity;
     }
 
@@ -207,7 +207,7 @@ public class Gyroscope : MonoBehaviour {
             calibrating = true;
         }
         currAngle = (Input.gyro.attitude * xAxisOnly).normalized;
-        prevAngle = Quaternion.Slerp(prevAngle, currAngle, Time.deltaTime * 2f);
+        prevAngle = Quaternion.Slerp(prevAngle, currAngle, Time.deltaTime * calibrationSpeed);
 
         float xAngle =
                 Mathf.Clamp((prevAngle * xAxisOnly).normalized.eulerAngles.x,
@@ -222,7 +222,7 @@ public class Gyroscope : MonoBehaviour {
 
         Vector2 pos =
                 new Vector2(
-                        Input.gyro.gravity.x * 200f,
+                        Input.gyro.gravity.x * lateralRatio,
                         angle);
 
         SetCalibrationCanvasPosition(pos);
