@@ -1,2 +1,3 @@
 # MooBooM_Redux
-Let's see if this works better
+Addictive obile game - collect bombs before they explode by rolling the cow using the phones accelerometer.
+A group project at Stocklholm Unversity.
